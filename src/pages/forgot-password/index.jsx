@@ -4,30 +4,61 @@ import sideImage from '../../assets/images/forgot-sideImg.png';
 import { Link } from 'react-router-dom';
 import { HiChevronLeft } from 'react-icons/hi';
 import OTPInput from '../../components/otp-input';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 const ForgotPassword = () => {
+    const navigate = useNavigate();
+
     const [step, setStep] = useState(1);
     const [email, setEmail] = useState("");
-    const [otp, setOtp] = useState("");
+    const [otp, setOtp] = useState(new Array(6).fill(""));
+
 
     const isValidEmail = (email) =>
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-    const handleNext = (e) => {
+    const handleNext = async (e) => {
         e.preventDefault();
-        if (isValidEmail(email)) {
-            setStep(2);
-        } else {
+        if (!isValidEmail(email)) {
             alert("Please enter a valid email.");
+            return;
+        }
+
+        try {
+            const res = await axios.post('http://localhost:5000/api/auth/forgetPassword', { email });
+            console.log("OTP sent response:", res.data);
+            setStep(2); // Move to OTP step only if request is successful
+        } catch (err) {
+            console.error("Error sending OTP:", err.response?.data || err.message);
+            alert(err.response?.data?.message || "Failed to send OTP. Please try again.");
         }
     };
 
-    const handleOtpSubmit = (e) => {
+
+    const handleOtpSubmit = async (e) => {
         e.preventDefault();
-        // Handle OTP submission
-        console.log("Submitted OTP:", otp);
+        const otpString = otp.join(""); // convert ['1','2','3','4','5','6'] => "123456"
+
+        try {
+            const res = await axios.post('http://localhost:5000/api/auth/resetPassword', {
+                email,
+                otp: otpString,
+            });
+
+            if (res.data.status === "success") {
+                navigate('/reset-password', { state: { email } });
+            }
+        } catch (err) {
+            console.error("OTP verification failed:", err.response?.data || err.message);
+            alert(err.response?.data?.message || "Failed to verify OTP. Try again.");
+        }
     };
+
+
+
+
     return (
         <div className="min-h-screen justify-center items-center flex flex-col md:flex-row md:bg-contain md:bg-right bg-none md:bg-no-repeat md:bg-[url('/src/assets/images/login-bg-rectangle.png')]">
             {/* Left: Login Form */}
@@ -62,7 +93,7 @@ const ForgotPassword = () => {
                             <label className="block text-[16px] font-medium text-[#24292E] mb-1">
                                 Enter <span className='font-[700]'>SIX</span> digit code we have sent to your email address to verify your new <span className='font-[700]'>AIGNOZ</span> Account
                             </label>
-                            <OTPInput />
+                            <OTPInput value={otp} onChange={setOtp} />
                         </div>
                     )}
 
@@ -72,9 +103,10 @@ const ForgotPassword = () => {
                     >
                         {step === 1 ? "Send OTP" : "Verify & Continue"}
                     </button>
+
                 </form>
 
-                <div className="my-6 flex items-center gap-2">
+                {/* <div className="my-6 flex items-center gap-2">
                     <div className="flex-grow h-px bg-gray-300"></div>
                     <span className="text-gray-400 text-sm">or</span>
                     <div className="flex-grow h-px bg-gray-300"></div>
@@ -83,11 +115,11 @@ const ForgotPassword = () => {
                 <button className="w-full cursor-pointer flex items-center justify-center gap-3 border border-gray-300 py-2 rounded-md hover:bg-gray-100 transition">
                     <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" className="w-5 h-5" />
                     Continue with Google
-                </button>
+                </button> */}
 
-                <p className="text-sm text-center mt-6">
+                {/* <p className="text-sm text-center mt-6">
                     Don’t have an account? <Link to={'/signup'}><span className="text-primary-600 hover:underline cursor-pointer">Sign up</span></Link>
-                </p>
+                </p> */}
             </div>
 
             {/* Right: Image */}

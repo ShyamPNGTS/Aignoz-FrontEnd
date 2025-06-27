@@ -15,10 +15,12 @@ import BlogDetail from './pages/blogs-detail';
 import Appointment from './pages/appointment';
 import ForgotPassword from './pages/forgot-password';
 import AppointmentDetail from './pages/appointment-detail';
+import ResetPassword from './pages/reset-password';
+import AppointmentConfirm from './pages/appointment-detail-confirm';
 
 function AppWrapper() {
   const location = useLocation();
-  const hideNavbarFooter = ["/login", "/signup", "/forgot-password"].includes(location.pathname);
+  const hideNavbarFooter = ["/login", "/signup", "/forgot-password", "/reset-password"].includes(location.pathname);
 
   return (
     <>
@@ -32,12 +34,14 @@ function AppWrapper() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/contact-us" element={<Contact />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/appointment" element={<Appointment />} />
          <Route path="/appointment/:id" element={<AppointmentDetail />} />
+         <Route path="/confirm-appointment/:id" element={<AppointmentConfirm />} />
       </Routes>
 
       {!hideNavbarFooter && <Footer />}

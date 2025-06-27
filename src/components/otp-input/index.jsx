@@ -1,32 +1,31 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
-export default function OTPInput() {
-  const [otp, setOtp] = useState(new Array(6).fill(""));
+export default function OTPInput({ value, onChange }) {
   const inputsRef = useRef([]);
 
   const handleChange = (element, index) => {
-    const value = element.value.replace(/[^0-9]/g, "");
-    if (!value) return;
+  const val = element.value.replace(/[^0-9]/g, "");
 
-    const newOtp = [...otp];
-    newOtp[index] = value;
-    setOtp(newOtp);
+  const newOtp = [...value];
+  newOtp[index] = val;
+  onChange(newOtp);
 
-    // Move to next input
-    if (index < 5) {
-      inputsRef.current[index + 1].focus();
-    }
-  };
+  // Move to next input only if a value was typed
+  if (val && index < 5) {
+    inputsRef.current[index + 1].focus();
+  }
+};
+
 
   const handleKeyDown = (e, index) => {
-    if (e.key === "Backspace" && !otp[index] && index > 0) {
+    if (e.key === "Backspace" && !value[index] && index > 0) {
       inputsRef.current[index - 1].focus();
     }
   };
 
   return (
     <div className="flex mt-4 gap-4">
-      {otp.map((digit, i) => (
+      {value.map((digit, i) => (
         <input
           key={i}
           type="text"
@@ -41,4 +40,3 @@ export default function OTPInput() {
     </div>
   );
 }
-

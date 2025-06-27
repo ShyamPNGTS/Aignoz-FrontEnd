@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import testimonialImg from "../../assets/icons/testimonial-img.png";
+import { BiDotsHorizontalRounded } from "react-icons/bi";
 
 
 const testimonials = [
@@ -99,7 +100,7 @@ const Testimonial = () => {
     <div className="w-full py-16 mb-8 relative">
       <Slider {...settings}>
         {testimonials.map((item, index) => (
-          <div key={index} className="px-2">
+          <div key={index} className="px-2 mb-6">
             <div
               className={`relative rounded-xl p-6 pt-16 bg-white shadow-md transition-all duration-300 ${
                 index === activeIndex ? "scale-100 shadow-lg" : "scale-95 opacity-60"

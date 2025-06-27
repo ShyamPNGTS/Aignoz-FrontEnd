@@ -83,7 +83,7 @@ const doctors = [
 
 const AppointmentDetail = () => {
     const { id } = useParams();
-  const doctor = doctors.find((doc) => doc.id === Number(id)); // Convert id from string to number
+  const doctor = doctors.find((doc) => doc.id === Number(id)); 
 
   if (!doctor) {
     return <p className="text-center mt-10 text-red-500">Doctor not found</p>;
@@ -138,7 +138,7 @@ const AppointmentDetail = () => {
           </p>
         </div>
       </div>
-      <AppointmentSlots/>
+      <AppointmentSlots id={doctor.id}/>
     </section>
 
     {/**Doctors Overview Tabs */}

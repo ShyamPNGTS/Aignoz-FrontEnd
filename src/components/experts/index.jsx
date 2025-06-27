@@ -61,7 +61,7 @@ const Experts = () => {
                     className="w-full object-cover rounded-md mb-4"
                 />
                 <div className='flex justify-between'>
-                    <h3 className="text-[26px] font-[500] text-[#1A1D1F]">{doc.name}</h3>
+                    <h3 className="text-[26px] font-[500] text-[#1A1D1F]">{doc?.name}</h3>
                 </div>
                 <p className="text-[18px] mt-4 font-[600] text-[#24292E]">Speciality: <span className='font-[500] text-primary-500'>{doc.speciality}</span></p>
                 <p className="text-[18px] mt-4 text-[#454C52]">{doc.description}</p>

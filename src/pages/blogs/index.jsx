@@ -1,13 +1,17 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import HealthInsights from '../../components/health-insights';
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
-
-
-const categories = ["All", "Wellness Tips", "Children's Health", "Women's Health", "Nutrition & Lifestyle", "Technology and Lifestyle", "Doctor's Advice", "Physically Fitness", "Motivation"];
+import axios from 'axios';
+import { AiOutlineClose } from 'react-icons/ai';
 
 const Blogs = () => {
 
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
+
   const scrollRef = useRef(null);
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const scroll = (direction) => {
     const { current } = scrollRef;
@@ -16,6 +20,29 @@ const Blogs = () => {
       current.scrollBy({ left: direction === "left" ? -scrollAmount : scrollAmount, behavior: "smooth" });
     }
   };
+
+  const getAllCategories = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get("http://localhost:5000/api/blogCategories");
+      setLoading(false);
+
+      if (response.status === 200 && response.data.code === 200) {
+        const activeCategories = response.data.data.filter(cat => cat.status === 'active');
+        setCategories(["All", ...activeCategories.map(cat => cat.name)]);
+      } else {
+        console.error("Failed to fetch categories");
+      }
+    } catch (error) {
+      setLoading(false);
+      console.error("Fetch error:", error);
+    }
+  };
+
+  useEffect(() => {
+    getAllCategories();
+  }, []);
+
   return (
     <>
       {/* Hero Section */}
@@ -53,7 +80,11 @@ const Blogs = () => {
             {categories.map((cat, idx) => (
               <button
                 key={idx}
-                className="whitespace-nowrap borde cursor-pointer border-primary-500 text-primary-500 px-4 py-2 rounded-full hover:bg-primary-500 hover:text-white transition"
+                onClick={() => setActiveCategory(cat)}
+                className={`whitespace-nowrap cursor-pointer px-4 py-2 rounded-full transition border
+            ${activeCategory === cat
+                    ? "bg-primary-500 text-white border-primary-500"
+                    : "border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white"}`}
               >
                 {cat}
               </button>
@@ -69,23 +100,45 @@ const Blogs = () => {
         </div>
 
         <div className="bg-[#BE34EA1A] p-2 rounded-full w-full mt-8">
-          <div className="flex items-center space-x-2 px-4">
-
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
+          <div className="flex items-center space-x-2 px-4 relative w-full">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 text-primary-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z"
+              />
             </svg>
-
 
             <input
               type="text"
               placeholder="Search by name, specialty, or condition..."
-              className="bg-transparent w-full py-1 text-gray-700 placeholder-gray-500 focus:outline-none"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="bg-transparent w-full py-1 text-gray-700 placeholder-gray-500 focus:outline-none pr-6"
             />
+
+            {searchTerm && (
+              <button
+                onClick={() => setSearchTerm("")}
+                className="absolute right-4 text-gray-500 hover:text-red-500"
+              >
+                <AiOutlineClose className='text-primary-500 font-bold cursor-pointer ' size={18} />
+              </button>
+            )}
           </div>
+
+
         </div>
 
 
-        <HealthInsights />
+        <HealthInsights activeCategory={activeCategory} searchTerm={searchTerm} />
       </section>
     </>
   )

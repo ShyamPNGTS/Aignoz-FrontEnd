@@ -24,6 +24,7 @@ import { FaStar } from "react-icons/fa";
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
 import Testimonial from '../../components/testimonial'
 import HealthInsights from '../../components/health-insights'
+import { useNavigate } from 'react-router-dom'
 
 
 const Home = () => {
@@ -132,6 +133,18 @@ const Home = () => {
     }
   };
 
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    const token = localStorage.getItem("token"); 
+
+    if (token) {
+      navigate("/appointment"); 
+    } else {
+      navigate("/login"); 
+    }
+  };
+
 
   return (
     <>
@@ -162,7 +175,7 @@ const Home = () => {
               <p className="text-[16px] font-[400] text-[#383F45] mb-6">
                 Experience expert care from trusted medical professionals. Book appointments anytime, anywhere.
               </p>
-              <button className="bg-primary-500 cursor-pointer text-white px-6 py-3 rounded-full hover:bg-primary-700 transition">
+              <button onClick={handleClick} className="bg-primary-500 cursor-pointer text-white px-6 py-3 rounded-full hover:bg-primary-700 transition">
                 Book Appointment
               </button>
             </div>

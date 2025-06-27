@@ -3,6 +3,7 @@ import AppointmentImage from '../../assets/images/appointment-hero.png'
 import { LuMapPin } from 'react-icons/lu';
 import { FiSearch } from 'react-icons/fi';
 
+
 //Import Images here :
 import doctorImg from '../../assets/images/appointment-doctor-img.png'
 
@@ -12,7 +13,7 @@ import locIcon from '../../assets/icons/doctor-location.png'
 import langIcon from '../../assets/icons/doctor-language.png'
 import eduIcon from '../../assets/icons/doctor-education.png'
 import timeIcon from '../../assets/icons/doctor-availability.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const doctors = [
   {
@@ -83,7 +84,26 @@ const doctors = [
 
 ];
 
+
+
 const Appointment = () => {
+
+    const navigate = useNavigate();
+
+    const handleClick = (doc) => {
+    const token = localStorage.getItem("token");
+    console.log("Token here : ", token) 
+
+    if (token) {
+      navigate(`/appointment/${doc.id}`);
+       console.log("id here : ", doc.id) 
+    } else {
+      navigate("/login"); 
+      console.log("Hheheh log in here") 
+    }
+  };
+
+
     return (
         <>
             {/* Top Section  */}
@@ -200,10 +220,10 @@ const Appointment = () => {
                                 <p className="text-sm flex items-center gap-2 text-gray-600 mt-2"><img src={eduIcon} className='w-6 h-7' alt="" /> {doc.description}</p>
 
                                 {/* Button */}
-                                <Link to={`/appointment/${doc.id}`}>
-                                <button className="mt-4 cursor-pointer bg-primary-500 text-white px-6 py-2 rounded-full hover:bg-primary-600 transition">
+                                
+                                <button onClick={() => handleClick(doc)} className="mt-4 cursor-pointer bg-primary-500 text-white px-6 py-2 rounded-full hover:bg-primary-600 transition">
                                     Book Appointment
-                                </button></Link>
+                                </button>
                             </div>
                         </div>
                     ))}
