@@ -70,7 +70,7 @@ const Navbar = () => {
         </ul>
 
         {/* Right Side: Auth/User */}
-        <div className="hidden lg:flex items-center gap-4">
+        {/* <div className="hidden lg:flex items-center gap-4">
           {user ? (
            <div className="relative inline-block group">
   <button className="px-6 py-2 bg-primary-600 text-white rounded-full cursor-pointer">
@@ -110,14 +110,14 @@ const Navbar = () => {
               </Link>
             </>
           )}
-        </div>
+        </div> */}
 
         {/* Mobile Menu Toggle */}
-        <div className="lg:hidden">
+        {/* <div className="lg:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="text-2xl text-gray-700">
             {isOpen ? <HiX /> : <HiMenu />}
           </button>
-        </div>
+        </div> */}
       </div>
 
       {/* Mobile Menu */}
@@ -143,7 +143,7 @@ const Navbar = () => {
             })}
           </ul>
           <div className="flex flex-col items-start gap-3 px-4 pt-4 border-t border-gray-200">
-            {user ? (
+            {/* {user ? (
               <>
                 <Link to="/profile" className="w-full px-0 py-2 hover:text-primary-700" onClick={() => setIsOpen(false)}>
                   Profile
@@ -168,7 +168,7 @@ const Navbar = () => {
                   </button>
                 </Link>
               </div>
-            )}
+            )} */}
           </div>
         </div>
       )}
