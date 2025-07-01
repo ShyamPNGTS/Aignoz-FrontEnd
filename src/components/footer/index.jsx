@@ -70,7 +70,8 @@ const Footer = () => {
                             <ul className="space-y-2 text-sm">
                                <li onClick={scrollToTop()} className="hover:text-primary-600 text-[#24292E] cursor-pointer"><Link to={'/terms-and-conditions'}>Terms & Conditions</Link></li>
                                 <li onClick={scrollToTop()} className="hover:text-primary-600 text-[#24292E] cursor-pointer"><Link to={'/privacy-policy'}>Privacy Policy</Link></li>
-                                <li onClick={scrollToTop()} className="hover:text-primary-600 text-[#24292E] cursor-pointer"><Link to={'/refund-policy'}>Refund Policy</Link></li>
+                                <li onClick={scrollToTop()} className="hover:text-primary-600 text-[#24292E] cursor-pointer"><Link to={'/refund-policy'}>Refund & Cancellation Policy</Link></li>
+                                 <li onClick={scrollToTop()} className="hover:text-primary-600 text-[#24292E] cursor-pointer"><Link to={'/shipping-policy'}>Shipping & Delivery Policy</Link></li>
                             </ul>
                         </div>
 

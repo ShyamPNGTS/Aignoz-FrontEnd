@@ -17,6 +17,7 @@ import ForgotPassword from './pages/forgot-password';
 import AppointmentDetail from './pages/appointment-detail';
 import ResetPassword from './pages/reset-password';
 import AppointmentConfirm from './pages/appointment-detail-confirm';
+import ShippingPolicy from './pages/shipping-policy';
 
 function AppWrapper() {
   const location = useLocation();
@@ -39,6 +40,7 @@ function AppWrapper() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
+        <Route path="/shipping-policy" element={<ShippingPolicy />} />
         <Route path="/appointment" element={<Appointment />} />
          <Route path="/appointment/:id" element={<AppointmentDetail />} />
          <Route path="/confirm-appointment/:id" element={<AppointmentConfirm />} />
