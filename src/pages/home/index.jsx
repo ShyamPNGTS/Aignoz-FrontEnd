@@ -150,7 +150,7 @@ const Home = () => {
     <>
       {/* Hero Section  */}
       <div>
-  <section className="bg-[#BE34EA1A] px-6">
+  <section className="bg-[#BE34EA1A] pl-6">
     <div className="max-w-7xl ml-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-4">
       {/* Left Side - Text */}
       <div className="w-full md:w-1/2 text-center md:text-left">
@@ -193,7 +193,7 @@ const Home = () => {
         <img
           src={heroImg}
           alt="Spiritual healing"
-          className="w-full max-w-md md:max-w-full md:h-auto h-auto relative z-10 md:ml-auto"
+          className="w-[90%] max-w-md md:max-w-full md:h-auto h-auto relative z-10 md:ml-auto"
         />
       </div>
     </div>
