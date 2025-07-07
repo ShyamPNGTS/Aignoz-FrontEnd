@@ -54,7 +54,7 @@ const Experts = () => {
         {experts.map((doc) => (
             <div
                 key={doc.id}
-                className="bg-white p-4 rounded-[12px] shadow-lg shadow-primary-100" >
+                className="bg-white p-4 rounded-[20px] shadow-lg drop-shadow-[0_4px_8px_rgba(221, 124, 254, 0.4)]" >
                 <img
                     src={doc.image}
                     alt={doc.name}

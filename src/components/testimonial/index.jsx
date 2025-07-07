@@ -14,13 +14,13 @@ const testimonials = [
     name: "Meera Kapoor",
     image: testimonialImg,
     quote:
-      "Finding the right doctor was effortless with this clinic. The booking process was simple, and Dr. Ayesha took the time to explain everything clearly. I felt truly cared for.",
+      "Their AI made it so easy to find the perfect doctor for me. The booking process was smooth, and Dr. Ayesha took the time to explain everything clearly. I felt completely supported and cared for.",
   },
   {
     name: "Rajiv Menon",
     image: testimonialImg,
     quote:
-      "Finding the right doctor was effortless with this clinic. The booking process was simple, and Dr. Ayesha took the time to explain everything clearly. I felt truly cared for.",
+      "The AI-driven matching helped me find the right doctor effortlessly. Booking was seamless, and Dr. Ayesha explained everything in detail. I felt genuinely looked after and confident in my care.",
   },
   {
     name: "Tanisha Verma",
@@ -32,13 +32,13 @@ const testimonials = [
     name: "Arjun Rathi",
     image: testimonialImg,
     quote:
-      "Finding the right doctor was effortless with this clinic. The booking process was simple, and Dr. Ayesha took the time to explain everything clearly. I felt truly cared for.",
+      "Thanks to their smart AI, finding the right doctor was simple and stress-free. Booking was easy, and Dr. Ayesha’s clear explanations made me feel truly cared for.",
   },
   {
     name: "Sanya Bhatia",
     image: testimonialImg,
     quote:
-      "Finding the right doctor was effortless with this clinic. The booking process was simple, and Dr. Ayesha took the time to explain everything clearly. I felt truly cared for.",
+      "Their AI made finding a doctor so simple! Booking was a breeze, and Dr. Ayesha explained everything clearly. I felt completely cared for.",
   },
 ];
 

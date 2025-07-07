@@ -15,20 +15,20 @@ import { HiOutlineCheckCircle } from "react-icons/hi";
 import Experts from '../../components/experts';
 
 const achieveImg = [
-        {
-           img : achieve1,
-        },
-        {
-          img : achieve2,
-        },
-        {
-          img : achieve3,
-        },
-        {
-          img : achieve4,
-        },
-       
-    ];
+  {
+    img: achieve1,
+  },
+  {
+    img: achieve2,
+  },
+  {
+    img: achieve3,
+  },
+  {
+    img: achieve4,
+  },
+
+];
 
 const About = () => {
 
@@ -84,9 +84,13 @@ const About = () => {
             <span className='font-[600] text-primary-500'>Our Mission</span>
           </h2>
           <p className="text-[#383F45] text-[16px] md:text-lg">
-            Our mission is simple: to deliver high-quality healthcare that is accessible, affordable, and personalized to meet the unique needs of every patient. We are dedicated to helping you achieve optimal health through expert medical care, advanced technology, and a compassionate, patient-first approach.
+            At Aignoz, our mission is to make healthcare smarter, faster, and more accessible by combining the power of AI-driven symptom assessment with expert online doctor consultations.
           </p>
-          <div className='flex items-center mt-6 md:w-[100%] gap-4'>
+          <p className="text-[#383F45] mt-6 text-[16px] md:text-lg">
+            We believe every patient deserves timely care. That’s why your journey with Aignoz starts by interacting with our intelligent AI chatbot, which listens to your symptoms, asks relevant health questions, and instantly generates a detailed diagnostic report. This report is then shared with our certified doctors, enabling them to provide personalized and informed medical consultation—all from the comfort of your home.
+
+          </p>
+          {/* <div className='flex items-center mt-6 md:w-[100%] gap-4'>
             <p> <span className='font-semibold text-primary-500 '>Accessible Care: </span> Making healthcare easy to reach for every patient.</p>
           </div>
           <div className='flex items-center mt-4 md:w-[100%] gap-4'>
@@ -100,7 +104,7 @@ const About = () => {
           </div>
           <div className='flex items-center mt-4 md:w-[100%] gap-4'>
             <p> <span className='font-semibold text-primary-500'>Technology-Driven Excellence:</span> Advanced tools for better outcomes.</p>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -114,9 +118,12 @@ const About = () => {
             <span className='font-[600] text-primary-500'>Our Vision</span>
           </h2>
           <p className="text-[#383F45] text-[16px] md:text-lg">
-          We envision becoming a leading healthcare provider known for innovative treatments, a strong focus on patient care, and a seamless experience that allows you to feel supported throughout your healthcare journey.
+            We envision a future where smart technology and compassionate care work hand in hand to transform how people access healthcare.
           </p>
-          <div className='flex items-center mt-6 md:w-[100%] gap-2'>
+          <p className="text-[#383F45] mt-6 text-[16px] md:text-lg">
+            At Aignoz, our vision is to become a trusted leader in AI-assisted online medical consultations, offering every patient a seamless and informed healthcare experience—from their first interaction with our AI chatbot to their consultation with a certified doctor.
+          </p>
+          {/* <div className='flex items-center mt-6 md:w-[100%] gap-2'>
           <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
             <p>Committed to accessible and personalized medical care</p>
           </div>
@@ -135,7 +142,7 @@ const About = () => {
           <div className='flex items-center mt-6 md:w-[100%] gap-2'>
           <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
             <p>Making healthcare easy to reach for every patient.</p>
-          </div>
+          </div> */}
         </div>
 
         {/* Right Side - Image */}
@@ -151,8 +158,8 @@ const About = () => {
       {/* 4th Section  */}
       <section className='section-about bg-gradient-to-r from-transparent to-primary-50 flex flex-col md:flex-row items-center gap-8'>
 
-         {/* Left Side - Image */}
-         <div className="md:w-1/2">
+        {/* Left Side - Image */}
+        <div className="md:w-1/2">
           <img
             src={img4}
             alt="Descriptive Alt"
@@ -167,27 +174,29 @@ const About = () => {
             <span className='font-[600] text-primary-500'>Our History</span>
           </h2>
           <p className="text-[#383F45] text-[16px] md:text-lg">
-          We began with a clear goal — to provide high-quality, affordable, and compassionate healthcare tailored to each patient's unique needs. Over the years, our commitment to excellence and a patient-first approach has helped us grow and build lasting trust in the community.
+            Aignoz began with a mission to simplify healthcare using smart technology.
+            We introduced an AI chatbot that evaluates symptoms before doctor consultations.
+            This innovation has shaped our journey toward faster, more informed care.
           </p>
           <div className='flex items-center mt-6 md:w-[100%] gap-2'>
-          <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
-            <p>Committed to accessible and personalized medical care</p>
+            <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
+            <p>Launched India’s first AI-powered pre-diagnosis chatbot</p>
           </div>
           <div className='flex items-center mt-6 md:w-[100%] gap-2'>
-          <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
-            <p>Led by expert doctors with years of experience</p>
+            <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
+            <p>Enabled online consultations for safe, remote medical advice</p>
           </div>
           <div className='flex items-center mt-6 md:w-[100%] gap-2'>
-          <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
-            <p>Trusted by a growing community of satisfied patients</p>
+            <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
+            <p>Built trust with a growing community of satisfied patients</p>
           </div>
           <div className='flex items-center mt-6 md:w-[100%] gap-2'>
-          <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
-            <p>Reach more patients and grow your practice.</p>
+            <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
+            <p>Combined technology with compassionate care</p>
           </div>
           <div className='flex items-center mt-6 md:w-[100%] gap-2'>
-          <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
-            <p>Making healthcare easy to reach for every patient.</p>
+            <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
+            <p>Evolved as a patient-first, innovation-led platform</p>
           </div>
         </div>
 
@@ -195,35 +204,35 @@ const About = () => {
 
       {/* Meet the Experts Section  */}
       <section className='section'>
-      <div className='xl:w-[60%] text-center mx-auto mt-14'>
+        <div className='xl:w-[60%] text-center mx-auto mt-14'>
           <h1 className='font-[600] text-[36px]'>Meet the Experts</h1>
           <p className='text-[18px] mt-2 text-[#383F45] '>Your health is in safe hands with our expert medical team.</p>
         </div>
-        <Experts/>
+        <Experts />
       </section>
 
       {/* Doctor's Achievement Section  */}
       <section className='section'>
-      <div className='xl:w-[60%] text-center mx-auto mt-14'>
+        <div className='xl:w-[60%] text-center mx-auto mt-14'>
           <h1 className='font-[600] text-[36px]'>Our Achievements</h1>
           <p className='text-[18px] mt-2 text-[#383F45] '>Our team of dedicated doctors has consistently set benchmarks in medical excellence, patient care, and innovation. Their achievements reflect a passion for healing and a commitment to advancing healthcare.</p>
         </div>
         <div className="relative mt-12 flex items-center">
-    {/* Cards */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 flex-1">
-        {achieveImg.map((doc) => (
-            <div
-              
+          {/* Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 flex-1">
+            {achieveImg.map((doc) => (
+              <div
+
                 className="bg-white rounded-[12px] mb-10 shadow-lg" >
                 <img
-                    src={doc.img}
-                    alt={doc.name}
-                    className="w-full object-cover cursor-pointer rounded-[12px]"
+                  src={doc.img}
+                  alt={doc.name}
+                  className="w-full object-cover cursor-pointer rounded-[12px]"
                 />
-            </div>
-        ))}
-    </div>
-</div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
 

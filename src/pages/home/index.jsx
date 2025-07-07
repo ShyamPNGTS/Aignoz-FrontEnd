@@ -44,8 +44,8 @@ const Home = () => {
     {
       id: 3,
       image: icon3,
-      title: "Diagnostics & Lab Tests",
-      text: "Advanced testing services with accurate and timely results.",
+      title: "AI Chatbot Diagnosis",
+      text: "Aignoz’s chatbot consultations with symptom analysis.",
     },
     {
       id: 4,
@@ -56,14 +56,14 @@ const Home = () => {
     {
       id: 5,
       image: icon5,
-      title: "Chronic Disease Management",
-      text: "Personalized care plans for conditions like diabetes, hypertension, and asthma.",
+      title: "Disease Management",
+      text: "Personalized care for diabetes, hypertension, and asthma.",
     },
     {
       id: 6,
       image: icon6,
-      title: "Vaccinations & Immunizations",
-      text: "Safe and timely vaccines for children and adults to stay protected.",
+      title: "Vaccinations",
+      text: "Timely vaccines for children and adults to stay protected.",
     },
   ];
   const doctors = [
@@ -73,7 +73,7 @@ const Home = () => {
       specialization: "Cardiologist",
       description: "Specialized in medical imaging and analysis, ensuring accurate and timely diagnostic support for every patient.",
       image: doctor1,
-      rating : 4.5,
+      rating: 4.5,
     },
     {
       id: 2,
@@ -81,7 +81,7 @@ const Home = () => {
       specialization: "Endocrinologist",
       description: "Specialized in medical imaging and analysis, ensuring accurate and timely diagnostic support for every patient.",
       image: doctor2,
-      rating : 4.2,
+      rating: 4.2,
     },
     {
       id: 3,
@@ -89,7 +89,7 @@ const Home = () => {
       specialization: "Dermatologist",
       description: "Specialized in medical imaging and analysis, ensuring accurate and timely diagnostic support for every patient.",
       image: doctor3,
-      rating : 4.4,
+      rating: 4.4,
     },
     {
       id: 4,
@@ -97,7 +97,7 @@ const Home = () => {
       specialization: "Neurologist",
       description: "Specialized in medical imaging and analysis, ensuring accurate and timely diagnostic support for every patient.",
       image: doctor1,
-      rating : 4.8,
+      rating: 4.8,
     },
   ];
 
@@ -115,7 +115,7 @@ const Home = () => {
         setVisibleCards(3); // large screens
       }
     };
-  
+
     updateVisibleCards();
     window.addEventListener("resize", updateVisibleCards);
     return () => window.removeEventListener("resize", updateVisibleCards);
@@ -136,12 +136,12 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    const token = localStorage.getItem("token"); 
+    const token = localStorage.getItem("token");
 
     if (token) {
-      navigate("/appointment"); 
+      navigate("/appointment");
     } else {
-      navigate("/login"); 
+      navigate("/login");
     }
   };
 
@@ -150,92 +150,98 @@ const Home = () => {
     <>
       {/* Hero Section  */}
       <div>
-        <section className="bg-[#BE34EA1A] px-6">
-          <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10">
-            {/* Left Side - Text */}
-            <div className="md:w-1/2">
-              <h1 className="text-4xl md:text-[64px] font-semibold text-gray-800 mb-2">
-                Your Health is Our
-              </h1>
-              <h1 className="text-4xl md:text-[64px] font-semibold text-primary-500 mb-1">
-                First Priority
-              </h1>
-              <svg
-                className="w-[50%] h-3 mb-6 z-0"
-                viewBox="0 0 100 10"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0,10 Q50,-10 100,10"
-                  stroke="#BE34EA"
-                  strokeWidth="3"
-                  fill="none"
-                />
-              </svg>
-              <p className="text-[16px] font-[400] text-[#383F45] mb-6">
-                Experience expert care from trusted medical professionals. Book appointments anytime, anywhere.
-              </p>
-              <button onClick={handleClick} className="bg-primary-500 cursor-pointer text-white px-6 py-3 rounded-full hover:bg-primary-700 transition">
-                Book Appointment
-              </button>
-            </div>
-
-            {/* Right Side - Image */}
-            <div className="relative md:w-1/2">
-              {/* Background Decorative Image */}
-              <img
-                src={bgdoctor}
-                alt=""
-                className="absolute bottom-0 h-[60%]  w-[160%] hidden md:block opacity-400 -z-10"
-              />
-              <img
-                src={heroImg}
-                alt="Spiritual healing"
-                className="w-full max-w-md relative z-10 mx-auto"
-              />
-            </div>
-          </div>
-
-        </section>
-        <div className='w-[100%] py-4 flex-col md:flex-row gap-8 md:gap-0 justify-around text-white flex bg-[#BE34EAE5]'>
-          <div className='flex items-center flex-col'>
-            <h1 className='text-[48px] font-[600] '>24/7</h1>
-            <p className='text-[16px] '>Online Support</p>
-          </div>
-          <div className='flex items-center flex-col'>
-            <h1 className='text-[48px] font-[600] '>100+</h1>
-            <p className='text-[16px] '>Doctors</p>
-          </div>
-          <div className='flex items-center flex-col'>
-            <h1 className='text-[48px] font-[600] '>1M+</h1>
-            <p className='text-[16px] '>Active Patients</p>
-          </div>
-        </div>
+  <section className="bg-[#BE34EA1A] px-6">
+    <div className="max-w-7xl ml-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-4">
+      {/* Left Side - Text */}
+      <div className="w-full md:w-1/2 text-center md:text-left">
+        <h1 className="text-3xl md:text-[50px] font-semibold text-gray-800 mb-2 leading-snug">
+          AI-Powered Care for Your Health
+        </h1>
+        <h2 className="text-3xl md:text-[50px] font-semibold text-primary-500 mb-1 leading-snug">
+          Smarter. Faster. Personal.
+        </h2>
+        <svg
+          className="w-1/2 h-3 mb-6 z-0 mx-auto md:mx-0"
+          viewBox="0 0 100 10"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,10 Q50,-10 100,10"
+            stroke="#BE34EA"
+            strokeWidth="3"
+            fill="none"
+          />
+        </svg>
+        <p className="text-base text-[#383F45] mb-6 max-w-md mx-auto md:mx-0">
+          Get personalized care from trusted medical experts, guided by advanced AI. Book anytime, anywhere.
+        </p>
+        <button
+          onClick={handleClick}
+          className="bg-primary-500 text-white px-6 py-3 rounded-full hover:bg-primary-700 transition"
+        >
+          Book Appointment
+        </button>
       </div>
 
+      {/* Right Side - Image */}
+      <div className="w-full md:w-1/2 relative md:pr-0 pr-4">
+        <img
+          src={bgdoctor}
+          alt=""
+          className="absolute bottom-0 right-0 h-[60%] w-[160%] hidden md:block opacity-40 -z-10"
+        />
+        <img
+          src={heroImg}
+          alt="Spiritual healing"
+          className="w-full max-w-md md:max-w-full md:h-auto h-auto relative z-10 md:ml-auto"
+        />
+      </div>
+    </div>
+  </section>
+
+  {/* Stats Bar */}
+  <div className="w-full py-6 flex flex-col md:flex-row gap-6 md:gap-0 justify-around text-white bg-[#BE34EAE5]">
+    <div className="flex items-center flex-col">
+      <h1 className="text-[40px] font-semibold">24/7</h1>
+      <p className="text-base">Online Support</p>
+    </div>
+    <div className="flex items-center flex-col">
+      <h1 className="text-[40px] font-semibold">100+</h1>
+      <p className="text-base">Doctors</p>
+    </div>
+    <div className="flex items-center flex-col">
+      <h1 className="text-[40px] font-semibold">1M+</h1>
+      <p className="text-base">Active Patients</p>
+    </div>
+  </div>
+</div>
+
+
       {/* Cards Section  */}
-      <section className='section'>
-        <div className='xl:w-[60%] text-center mx-auto mt-14'>
-          <h1 className='font-[500] text-[36px]'>Quality Healthcare Services We Provide</h1>
-          <p className='text-[18px] mt-2 text-[#383F45] '>We offer a wide range of medical services to meet your health needs with care, precision, and compassion.</p>
-        </div>
-        <div className="px-6 py-12 bg-no-repeat bg-cover bg-[url('/src/assets/images/home-effect-1.png')] bg-left-bottom">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
-            {cards.map((card) => (
-              <div
-                key={card.id}
-                className="bg-white rounded-xl border-1 border-primary-200 overflow-hidden hover:shadow-lg transition duration-300"
-              >
-                <img src={card.image} alt={card.title} className="px-6 pt-4" />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-[22px] text-[#1A1D1F] mb-2">{card.title}</h3>
-                  <p className="text-gray-600 text-[18px] text-[#454C52] ">{card.text}</p>
-                </div>
-              </div>
-            ))}
+      <div className="bg-no-repeat bg-cover bg-[url('/src/assets/images/home-effect-1.png')] bg-left-bottom">
+        <section className='section'>
+          <div className='xl:w-[60%] text-center mx-auto mt-14'>
+            <h1 className='font-[500] text-[36px]'>Quality Healthcare Services We Provide</h1>
+            <p className='text-[18px] mt-2 text-[#383F45] '>We offer a wide range of medical services to meet your health needs with care, precision, and compassion.</p>
           </div>
-        </div>
-      </section>
+          <div className="px-6 py-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+              {cards.map((card) => (
+                <div
+                  key={card.id}
+                  className="bg-white rounded-xl border-1 border-primary-200 overflow-hidden hover:shadow-lg transition duration-300"
+                >
+                  <img src={card.image} alt={card.title} className="px-6 pt-4" />
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-[22px] text-[#1A1D1F] mb-2">{card.title}</h3>
+                    <p className="text-[18px] text-[#454C52] ">{card.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
 
       {/* Why Patients Trust Us Section  */}
       <section className='section mt-10'>
@@ -245,7 +251,8 @@ const Home = () => {
           <div className="md:w-[100%] space-y-6">
             <h2 className="text-[36px] font-bold text-gray-800">Why Patients Trust Us</h2>
             <p className="text-[#383F45] text-[18px]">
-              Choosing the right healthcare provider is important, and we’re here to make that decision easy. At our clinic, we combine medical excellence with compassionate care, giving every patient the attention they deserve. Here's why so many trust us with their health:
+              {/* Choosing the right healthcare provider is important, and we’re here to make that decision easy. At our clinic, we combine medical excellence with compassionate care, giving every patient the attention they deserve. Here's why so many trust us with their health: */}
+              Choosing the right healthcare partner is crucial. Our advanced AI technology works hand in hand with expert doctors to deliver personalized, compassionate care you can trust.
             </p>
             <button className="bg-primary-500 cursor-pointer text-white px-6 py-2 rounded-full hover:bg-primary-700 transition">
               Read more
@@ -253,31 +260,47 @@ const Home = () => {
             <img
               src={patientTrust}
               alt="Healing illustration"
-              className="w-130 object-contain mt-6"
+              className="w-130 rounded-3xl object-contain mt-6"
             />
           </div>
 
           {/* Right Side - Plus Symbol Layout */}
           <div className="grid grid-cols-2 md:grid-cols-2 gap-0 ">
             {/* Box 1 */}
-            <div className="bg-white mt-14 h-max border-r-2 border-b-2 border-primary-500 py-10  p-5">
+            {/* <div className="bg-white mt-14 h-max border-r-2 border-b-2 border-primary-500 py-10 p-5">
               <h2 className="text-[#1A1D1F] text-[22px] font-semibold mb-2">
                 Chronic Disease Management
               </h2>
               <p className="text-[18px] text-[#454C52] ">
                 Personalized care plans for conditions like diabetes, hypertension, and asthma.
               </p>
+            </div> */}
+            <div className="bg-white mt-14 h-max relative border-r-2 border-primary-500 py-10 p-5">
+              {/* Bottom border as a separate div */}
+              <div className="absolute bottom-0 left-3 h-[2px] bg-primary-500 w-[90%]"></div>
+
+              <h2 className="text-[#1A1D1F] text-[22px] font-semibold mb-2">
+                Chronic Disease Management
+              </h2>
+              <p className="text-[18px] text-[#454C52]">
+                Personalized care plans for conditions like diabetes, hypertension, and asthma.
+              </p>
             </div>
 
+
             {/* Box 2 */}
-            <div className="bg-white h-max p-5 mt-[40px]  border-b-2 border-primary-500">
+            <div className="bg-white h-max relative p-5 mt-[40px] border-primary-500">
+              {/* Bottom border as a custom div */}
+              <div className="absolute bottom-0 right-3 h-[2px] bg-primary-500 w-[90%]"></div>
+
               <h2 className="text-[#1A1D1F] text-[22px] font-semibold mb-2">
                 Preventive Screenings
               </h2>
-              <p className="text-[18px] text-[#454C52] ">
+              <p className="text-[18px] text-[#454C52]">
                 Timely check-ups to detect issues before they become serious health concerns.
               </p>
             </div>
+
 
             {/* Box 3 */}
             <div className="bg-white h-max border-r-2 border-primary-500  p-5 ">
@@ -292,10 +315,10 @@ const Home = () => {
             {/* Box 4 */}
             <div className="bg-white h-max mt-[-70px] p-5">
               <h2 className="text-[#1A1D1F] text-[22px] font-semibold mb-2">
-                Nutritional Counseling
+                AI Chatbot Diagnosis
               </h2>
               <p className="text-[18px] text-[#454C52] ">
-                Customized dietary plans to boost energy, immunity, and long-term wellness.
+                Aignoz’s chatbot collects symptoms and creates a report for faster doctor care.
               </p>
             </div>
           </div>
@@ -318,7 +341,7 @@ const Home = () => {
             disabled={startIndex === 0}
             className="disabled:opacity-30 cursor-pointer bg-white shadow p-2 rounded-full mr-4"
           >
-             <HiArrowNarrowLeft className="text-2xl text-primary-500" />
+            <HiArrowNarrowLeft className="text-2xl text-primary-500" />
           </button>
 
           {/* Cards */}
@@ -334,11 +357,11 @@ const Home = () => {
                   className="w-full object-cover rounded-md mb-4"
                 />
                 <div className='flex justify-between'>
-                <h3 className="text-[18px] font-[500] text-[#24292E]">{doc.name}</h3>
-                <div className="flex bg-[#FFCC001F] rounded-full px-2 py-1 items-center gap-1">
-                  <FaStar className="text-yellow-400 text-sm" />
-                  <span className="text-sm text-gray-700">{doc.rating}</span>
-                </div>
+                  <h3 className="text-[18px] font-[500] text-[#24292E]">{doc.name}</h3>
+                  <div className="flex bg-[#FFCC001F] rounded-full px-2 py-1 items-center gap-1">
+                    <FaStar className="text-yellow-400 text-sm" />
+                    <span className="text-sm text-gray-700">{doc.rating}</span>
+                  </div>
                 </div>
                 <p className="text-sm text-primary-600 font-medium mb-2">
                   {doc.specialization}
@@ -362,61 +385,61 @@ const Home = () => {
 
       {/* Client Testimonial Section  */}
       <section className='section bg-[#F9FCF8] mt-8'>
-      <div className="xl:w-[30%] md:w-[40%] h-30 bg-center w-[80%] bg-no-repeat bg-[url('/src/assets/icons/home-client-quote-bg.png')] text-center mx-auto mt-14">
+        <div className="xl:w-[30%] md:w-[40%] h-30 bg-center w-[80%] bg-no-repeat bg-[url('/src/assets/icons/home-client-quote-bg.png')] text-center mx-auto mt-14">
           <h1 className='font-[600] text-[#24292E] text-[30px]'>What our client say about us.</h1>
         </div>
-       <Testimonial/>
+        <Testimonial />
       </section>
 
-       {/* left-img & right-text Section  */}
+      {/* left-img & right-text Section  */}
       <div className="bg-contain bg-bottom pb-6 mb-8 bg-no-repeat bg-[url('/src/assets/images/home-section-bg.png')]">
-      <section className='section mt-14 flex flex-col md:flex-row items-center gap-8'>
-      
-      {/* Left Side - Image */}
-      <div className="md:w-1/2">
-        <img
-          src={img1}
-          alt="Descriptive Alt"
-          className="w-[550px] rounded-md"
-        />
-      </div>
-    
-      {/* Right Side - Text */}
-      <div className="md:w-1/2">
-      <hr className='w-50 text-primary-500 border-2 '/>
-        <h2 className="text-[32px] md:text-3xl font-[600] text-[#24292E] my-4">
-        Unlock the Future of Healthcare with Our Platform
-        </h2>
-        <p className="text-[#383F45] text-[16px] md:text-lg">
-        Discover the powerful tools and benefits that make our healthcare network the top choice for medical professionals.
-        </p>
-        <div className='flex items-center mt-8 md:w-[60%] gap-4'>
-          <img src={icon7} alt="" />
-          <p> <span className='font-semibold'>Broad Patient Network:</span> Reach more patients and grow your practice.</p>
-        </div>
-        <div className='flex items-center mt-8 md:w-[60%] gap-4'>
-          <img src={icon8} alt="" />
-          <p> <span className='font-semibold'>Telemedicine:</span> Offer consultations anytime, anywhere.</p>
-        </div>
-        <div className='flex items-center mt-8 md:w-[60%] gap-4'>
-          <img src={icon9} alt="" />
-          <p> <span className='font-semibold'>Showcase Your Expertise:</span> Highlight your qualifications and specialties.</p>
-        </div>
-        <div className='flex items-center mt-8 md:w-[60%] gap-4'>
-          <img src={icon10} alt="" />
-          <p> <span className='font-semibold'>Appointment Management:</span> Simplify scheduling with our intuitive system.</p>
-        </div>
-      </div>
-    </section>
+        <section className='section mt-14 flex flex-col md:flex-row items-center gap-8'>
+
+          {/* Left Side - Image */}
+          <div className="md:w-1/2">
+            <img
+              src={img1}
+              alt="Descriptive Alt"
+              className="w-[450px] rounded-3xl"
+            />
+          </div>
+
+          {/* Right Side - Text */}
+          <div className="md:w-1/2">
+            <hr className='w-50 text-primary-500 border-2 ' />
+            <h2 className="text-[32px] md:text-3xl font-[600] text-[#24292E] my-4">
+              Unlock the Future of Healthcare with Our Platform
+            </h2>
+            <p className="text-[#383F45] text-[16px] md:text-lg">
+              Discover the powerful tools and benefits that make our healthcare network the top choice for medical professionals.
+            </p>
+            <div className='flex items-center mt-8 md:w-[60%] gap-4'>
+              <img src={icon7} alt="" />
+              <p> <span className='font-semibold'>Broad Patient Network:</span> Reach more patients and grow your practice.</p>
+            </div>
+            <div className='flex items-center mt-8 md:w-[60%] gap-4'>
+              <img src={icon8} alt="" />
+              <p> <span className='font-semibold'>Telemedicine:</span> Offer consultations anytime, anywhere.</p>
+            </div>
+            <div className='flex items-center mt-8 md:w-[60%] gap-4'>
+              <img src={icon9} alt="" />
+              <p> <span className='font-semibold'>Showcase Your Expertise:</span> Highlight your qualifications and specialties.</p>
+            </div>
+            <div className='flex items-center mt-8 md:w-[60%] gap-4'>
+              <img src={icon10} alt="" />
+              <p> <span className='font-semibold'>Appointment Management:</span> Simplify scheduling with our intuitive system.</p>
+            </div>
+          </div>
+        </section>
       </div>
 
       {/* Health Insights Section  */}
       <section className='section'>
-      <div className='xl:w-[60%] text-center mx-auto mt-6'>
+        <div className='xl:w-[60%] text-center mx-auto mt-6'>
           <h1 className='font-[600] text-[36px]'>Explore Our Health Insights</h1>
           <p className='text-[18px] mt-2 text-[#383F45] '>Get expert advice, tips, and the latest health trends to empower your well-being.</p>
         </div>
-        <HealthInsights limit={3}/>
+        <HealthInsights limit={3} />
       </section>
 
       {/* Newsletter Section  */}
