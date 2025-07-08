@@ -150,7 +150,7 @@ const Home = () => {
     <>
       {/* Hero Section  */}
       <div>
-  <section className="bg-[#BE34EA1A] pl-6">
+  <section className="bg-[#BE34EA1A] md:pl-6">
     <div className="max-w-7xl ml-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-4">
       {/* Left Side - Text */}
       <div className="w-full md:w-1/2 text-center md:text-left">
@@ -177,14 +177,14 @@ const Home = () => {
         </p>
         <button
           onClick={handleClick}
-          className="bg-primary-500 text-white px-6 py-3 rounded-full hover:bg-primary-700 transition"
+          className="bg-primary-500 text-white mb-[33px] md:mb-0 px-6 py-3 rounded-full hover:bg-primary-700 transition"
         >
           Book Appointment
         </button>
       </div>
 
       {/* Right Side - Image */}
-      <div className="w-full md:w-1/2 relative md:pr-0 pr-4">
+      <div className="w-full md:w-1/2 relative pr-0">
         <img
           src={bgdoctor}
           alt=""
@@ -193,7 +193,7 @@ const Home = () => {
         <img
           src={heroImg}
           alt="Spiritual healing"
-          className="w-[90%] max-w-md md:max-w-full md:h-auto h-auto relative z-10 md:ml-auto"
+          className=" w-[100%] md:w-[90%] max-w-md md:max-w-full md:h-auto h-auto relative z-10 md:ml-auto"
         />
       </div>
     </div>
