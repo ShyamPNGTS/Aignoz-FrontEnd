@@ -173,7 +173,7 @@ const Home = () => {
           />
         </svg>
         <p className="text-base text-[#383F45] mb-6 max-w-md mx-auto md:mx-0">
-          Get personalized care from trusted medical experts, guided by advanced AI. Book anytime, anywhere.
+          Get personalized care from trusted medical experts, guided by advanced AI. Book anytime, anywhere
         </p>
         <button
           onClick={handleClick}
