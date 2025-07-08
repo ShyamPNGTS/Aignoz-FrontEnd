@@ -44,10 +44,10 @@ const cardVariants = {
 const Home = () => {
 
   const ref1 = useRef(null);
-const inView1 = useInView(ref1, { once: false });
+  const inView1 = useInView(ref1, { once: true });
 
-const ref2 = useRef(null);
-const inView2 = useInView(ref2, { once: false });
+  const ref2 = useRef(null);
+  const inView2 = useInView(ref2, { once: true });
 
   const cards = [
     {
@@ -166,6 +166,8 @@ const inView2 = useInView(ref2, { once: false });
     }
   };
 
+  const doctorRefs = useRef(doctors.map(() => React.createRef()));
+
 
   return (
     <>
@@ -175,25 +177,21 @@ const inView2 = useInView(ref2, { once: false });
           <div className="max-w-7xl ml-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-4">
             {/* Left Side - Text */}
             <div className="w-full md:w-1/2 text-center md:text-left">
-              <motion.h1
-                ref={ref1}
+              <h1
+               
                 className="text-3xl md:text-[50px] font-semibold text-gray-800 mb-2 leading-snug"
-                variants={cardVariants}
-                initial="hidden"
-                animate={inView1 ? "show" : "hidden"}
+               
               >
                 AI-Powered Care for Your Health
-              </motion.h1>
+              </h1>
 
-              <motion.h2
-                ref={ref2}
+              <h2
+                
                 className="text-3xl md:text-[50px] font-semibold text-primary-500 mb-1 leading-snug"
-                variants={cardVariants}
-                initial="hidden"
-                animate={inView2 ? "show" : "hidden"}
+                
               >
                 Smarter. Faster. Personal.
-              </motion.h2>
+              </h2>
               <svg
                 className="w-1/2 h-3 mb-6 z-0 mx-auto md:mx-0"
                 viewBox="0 0 100 10"
@@ -253,40 +251,25 @@ const inView2 = useInView(ref2, { once: false });
 
       {/* Cards Section  */}
       <div className="bg-no-repeat bg-cover bg-[url('/src/assets/images/home-effect-1.png')] bg-left-bottom">
-        <section className="section">
-          <div className="xl:w-[60%] text-center mx-auto mt-14">
-            <h1 className="font-[500] text-[36px]">Quality Healthcare Services We Provide</h1>
-            <p className="text-[18px] mt-2 text-[#383F45]">
-              We offer a wide range of medical services to meet your health needs with care, precision, and compassion.
-            </p>
+        <section className='section'>
+          <div className='xl:w-[60%] text-center mx-auto mt-14'>
+            <h1 className='font-[500] text-[36px]'>Quality Healthcare Services We Provide</h1>
+            <p className='text-[18px] mt-2 text-[#383F45] '>We offer a wide range of medical services to meet your health needs with care, precision, and compassion.</p>
           </div>
-
           <div className="px-6 py-12">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
-              {cards.map((card) => {
-                const ref = useRef(null);
-                const inView = useInView(ref, { once: false, margin: "0px 0px -100px 0px" });
-
-                return (
-                  <motion.div
-                    key={card.id}
-                    ref={ref}
-                    className="bg-white rounded-xl border border-primary-200 overflow-hidden hover:shadow-lg transition duration-300"
-                    variants={cardVariants}
-                    initial="hidden"
-                    animate={inView ? "show" : "hidden"}
-                    whileHover={{ scale: 1.03 }}
-                  >
-                    <img src={card.image} alt={card.title} className="px-6 pt-4" />
-                    <div className="p-6">
-                      <h3 className="text-xl font-semibold text-[22px] text-[#1A1D1F] mb-2">
-                        {card.title}
-                      </h3>
-                      <p className="text-[18px] text-[#454C52]">{card.text}</p>
-                    </div>
-                  </motion.div>
-                );
-              })}
+              {cards.map((card) => (
+                <div
+                  key={card.id}
+                  className="bg-white rounded-xl border-1 border-primary-200 overflow-hidden hover:shadow-lg transition duration-300"
+                >
+                  <img src={card.image} alt={card.title} className="px-6 pt-4" />
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-[22px] text-[#1A1D1F] mb-2">{card.title}</h3>
+                    <p className="text-[18px] text-[#454C52] ">{card.text}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -395,40 +378,30 @@ const inView2 = useInView(ref2, { once: false });
 
           {/* Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-1">
-            {doctors.slice(startIndex, startIndex + visibleCards).map((doc) => {
-              const ref = useRef(null);
-              const isInView = useInView(ref, { once: false, margin: "0px 0px -100px 0px" });
-
-              return (
-                <motion.div
-                  key={doc.id}
-                  ref={ref}
-                  variants={cardVariants}
-                  initial="hidden"
-                  animate={isInView ? "show" : "hidden"}
-                  whileHover={{ scale: 1.03 }}
-                  className="bg-white p-4 rounded-md shadow-lg drop-shadow-[0_4px_8px_rgba(221,124,254,0.4)]"
-                >
-                  <img
-                    src={doc.image}
-                    alt={doc.name}
-                    className="w-full object-cover rounded-md mb-4"
-                  />
-                  <div className="flex justify-between">
-                    <h3 className="text-[18px] font-[500] text-[#24292E]">{doc.name}</h3>
-                    <div className="flex bg-[#FFCC001F] rounded-full px-2 py-1 items-center gap-1">
-                      <FaStar className="text-yellow-400 text-sm" />
-                      <span className="text-sm text-gray-700">{doc.rating}</span>
-                    </div>
+            {doctors.slice(startIndex, startIndex + visibleCards).map((doc) => (
+              <div
+                key={doc.id}
+                className="bg-white p-4 rounded-md shadow-lg drop-shadow-[0_4px_8px_rgba(221, 124, 254, 0.4)]"
+              >
+                <img
+                  src={doc.image}
+                  alt={doc.name}
+                  className="w-full object-cover rounded-md mb-4"
+                />
+                <div className='flex justify-between'>
+                  <h3 className="text-[18px] font-[500] text-[#24292E]">{doc.name}</h3>
+                  <div className="flex bg-[#FFCC001F] rounded-full px-2 py-1 items-center gap-1">
+                    <FaStar className="text-yellow-400 text-sm" />
+                    <span className="text-sm text-gray-700">{doc.rating}</span>
                   </div>
-                  <p className="text-sm text-primary-600 font-medium mb-2">
-                    {doc.specialization}
-                  </p>
-                  <hr className="text-[#E5E7EA] p-1 my-3" />
-                  <p className="text-[14px] text-[#454C52]">{doc.description}</p>
-                </motion.div>
-              );
-            })}
+                </div>
+                <p className="text-sm text-primary-600 font-medium mb-2">
+                  {doc.specialization}
+                </p>
+                <hr className='text-[#E5E7EA] p-1 my-3' />
+                <p className="text-[14px] text-[#454C52]">{doc.description}</p>
+              </div>
+            ))}
           </div>
 
 
