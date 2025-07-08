@@ -29,13 +29,13 @@ const Footer = () => {
                         <p className="text-[14px] text-[#24292E] ">
                             We are committed to providing trusted, compassionate healthcare. Our expert team ensures quality treatment, easy appointments, and patient-first care—every step of the way.
                         </p>
-                        <div className='flex gap-3 mt-8'>
+                        {/* <div className='flex gap-3 mt-8'>
                             <img className='cursor-pointer' src={facebook} alt="" />
                             <img className='cursor-pointer' src={whatsapp} alt="" />
                             <img className='cursor-pointer' src={youtube} alt="" />
                             <img className='cursor-pointer' src={linkedin} alt="" />
                             <img className='cursor-pointer' src={instagram} alt="" />
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* Right: 3 Columns */}
@@ -48,7 +48,7 @@ const Footer = () => {
                                 <li onClick={scrollToTop()} className="hover:text-primary-600 text-[#24292E] cursor-pointer"><Link to={'/about'}>About Us</Link></li>
                                 <li onClick={scrollToTop()} className="hover:text-primary-600 text-[#24292E] cursor-pointer"><Link to={'/blogs'}>Blogs</Link></li>
                                 <li onClick={scrollToTop()} className="hover:text-primary-600 text-[#24292E] cursor-pointer"><Link to={'/appointment'}>Appointment</Link></li>
-                                <li onClick={scrollToTop()} className="hover:text-primary-600 text-[#24292E] cursor-pointer"><Link to={'/contact-us'}>Contact</Link></li>
+                                <li onClick={scrollToTop()} className="hover:text-primary-600 text-[#24292E] cursor-pointer"><Link to={'/contact'}>Contact</Link></li>
                             </ul>
                         </div>
 

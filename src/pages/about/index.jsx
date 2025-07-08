@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 // Import images here
 import img1 from "../../assets/images/about-section-1.png";
@@ -13,6 +15,19 @@ import achieve4 from "../../assets/images/doctor-achievement-4.png";
 // Import icons here
 import { HiOutlineCheckCircle } from "react-icons/hi";
 import Experts from '../../components/experts';
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
 
 const achieveImg = [
   {
@@ -220,17 +235,28 @@ const About = () => {
         <div className="relative mt-12 flex items-center">
           {/* Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 flex-1">
-            {achieveImg.map((doc) => (
-              <div
+            {achieveImg.map((doc, index) => {
+              const ref = useRef(null);
+              const inView = useInView(ref, { once: false });
 
-                className="bg-white rounded-[12px] mb-10 shadow-lg" >
-                <img
-                  src={doc.img}
-                  alt={doc.name}
-                  className="w-full object-cover cursor-pointer rounded-[12px]"
-                />
-              </div>
-            ))}
+              return (
+                <motion.div
+                  key={index}
+                  ref={ref}
+                  className="bg-white rounded-[12px] mb-10 shadow-lg"
+                  variants={cardVariants}
+                  initial="hidden"
+                  animate={inView ? "show" : "hidden"}
+                  whileHover={{ scale: 1.03 }}
+                >
+                  <img
+                    src={doc.img}
+                    alt={doc.name}
+                    className="w-full object-cover cursor-pointer rounded-[12px]"
+                  />
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

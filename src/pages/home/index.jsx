@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 // Import Images here
 import heroImg from '../../assets/images/home-hero-doctor.png'
@@ -26,8 +28,27 @@ import Testimonial from '../../components/testimonial'
 import HealthInsights from '../../components/health-insights'
 import { useNavigate } from 'react-router-dom'
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
 
 const Home = () => {
+
+  const ref1 = useRef(null);
+const inView1 = useInView(ref1, { once: false });
+
+const ref2 = useRef(null);
+const inView2 = useInView(ref2, { once: false });
+
   const cards = [
     {
       id: 1,
@@ -150,94 +171,122 @@ const Home = () => {
     <>
       {/* Hero Section  */}
       <div>
-  <section className="bg-[#BE34EA1A] md:pl-6">
-    <div className="max-w-7xl ml-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-4">
-      {/* Left Side - Text */}
-      <div className="w-full md:w-1/2 text-center md:text-left">
-        <h1 className="text-3xl md:text-[50px] font-semibold text-gray-800 mb-2 leading-snug">
-          AI-Powered Care for Your Health
-        </h1>
-        <h2 className="text-3xl md:text-[50px] font-semibold text-primary-500 mb-1 leading-snug">
-          Smarter. Faster. Personal.
-        </h2>
-        <svg
-          className="w-1/2 h-3 mb-6 z-0 mx-auto md:mx-0"
-          viewBox="0 0 100 10"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,10 Q50,-10 100,10"
-            stroke="#BE34EA"
-            strokeWidth="3"
-            fill="none"
-          />
-        </svg>
-        <p className="text-base text-[#383F45] mb-6 max-w-md mx-auto md:mx-0">
-          Get personalized care from trusted medical experts, guided by advanced AI. Book anytime, anywhere
-        </p>
-        <button
-          onClick={handleClick}
-          className="bg-primary-500 text-white mb-[33px] md:mb-0 px-6 py-3 rounded-full hover:bg-primary-700 transition"
-        >
-          Book Appointment
-        </button>
-      </div>
+        <section className="bg-[#BE34EA1A] md:pl-6">
+          <div className="max-w-7xl ml-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-4">
+            {/* Left Side - Text */}
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <motion.h1
+                ref={ref1}
+                className="text-3xl md:text-[50px] font-semibold text-gray-800 mb-2 leading-snug"
+                variants={cardVariants}
+                initial="hidden"
+                animate={inView1 ? "show" : "hidden"}
+              >
+                AI-Powered Care for Your Health
+              </motion.h1>
 
-      {/* Right Side - Image */}
-      <div className="w-full md:w-1/2 relative pr-0">
-        <img
-          src={bgdoctor}
-          alt=""
-          className="absolute bottom-0 right-0 h-[60%] w-[160%] hidden md:block opacity-40 -z-10"
-        />
-        <img
-          src={heroImg}
-          alt="Spiritual healing"
-          className=" w-[100%] md:w-[90%] max-w-md md:max-w-full md:h-auto h-auto relative z-10 md:ml-auto"
-        />
-      </div>
-    </div>
-  </section>
+              <motion.h2
+                ref={ref2}
+                className="text-3xl md:text-[50px] font-semibold text-primary-500 mb-1 leading-snug"
+                variants={cardVariants}
+                initial="hidden"
+                animate={inView2 ? "show" : "hidden"}
+              >
+                Smarter. Faster. Personal.
+              </motion.h2>
+              <svg
+                className="w-1/2 h-3 mb-6 z-0 mx-auto md:mx-0"
+                viewBox="0 0 100 10"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M0,10 Q50,-10 100,10"
+                  stroke="#BE34EA"
+                  strokeWidth="3"
+                  fill="none"
+                />
+              </svg>
+              <p className="text-base text-[#383F45] mb-6 max-w-md mx-auto md:mx-0">
+                Get personalized care from trusted medical experts, guided by advanced AI. Book anytime, anywhere
+              </p>
+              <button
+                onClick={handleClick}
+                className="bg-primary-500 text-white mb-[33px] md:mb-0 px-6 py-3 rounded-full hover:bg-primary-700 transition"
+              >
+                Book Appointment
+              </button>
+            </div>
 
-  {/* Stats Bar */}
-  <div className="w-full py-6 flex flex-col md:flex-row gap-6 md:gap-0 justify-around text-white bg-[#BE34EAE5]">
-    <div className="flex items-center flex-col">
-      <h1 className="text-[40px] font-semibold">24/7</h1>
-      <p className="text-base">Online Support</p>
-    </div>
-    <div className="flex items-center flex-col">
-      <h1 className="text-[40px] font-semibold">100+</h1>
-      <p className="text-base">Doctors</p>
-    </div>
-    <div className="flex items-center flex-col">
-      <h1 className="text-[40px] font-semibold">1M+</h1>
-      <p className="text-base">Active Patients</p>
-    </div>
-  </div>
-</div>
+            {/* Right Side - Image */}
+            <div className="w-full md:w-1/2 relative pr-0">
+              <img
+                src={bgdoctor}
+                alt=""
+                className="absolute bottom-0 right-0 h-[60%] w-[160%] hidden md:block opacity-40 -z-10"
+              />
+              <img
+                src={heroImg}
+                alt="Spiritual healing"
+                className=" w-[100%] md:w-[90%] max-w-md md:max-w-full md:h-auto h-auto relative z-10 md:ml-auto"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Bar */}
+        <div className="w-full py-6 flex flex-col md:flex-row gap-6 md:gap-0 justify-around text-white bg-[#BE34EAE5]">
+          <div className="flex items-center flex-col">
+            <h1 className="text-[40px] font-semibold">24/7</h1>
+            <p className="text-base">Online Support</p>
+          </div>
+          <div className="flex items-center flex-col">
+            <h1 className="text-[40px] font-semibold">100+</h1>
+            <p className="text-base">Doctors</p>
+          </div>
+          <div className="flex items-center flex-col">
+            <h1 className="text-[40px] font-semibold">1M+</h1>
+            <p className="text-base">Active Patients</p>
+          </div>
+        </div>
+      </div>
 
 
       {/* Cards Section  */}
       <div className="bg-no-repeat bg-cover bg-[url('/src/assets/images/home-effect-1.png')] bg-left-bottom">
-        <section className='section'>
-          <div className='xl:w-[60%] text-center mx-auto mt-14'>
-            <h1 className='font-[500] text-[36px]'>Quality Healthcare Services We Provide</h1>
-            <p className='text-[18px] mt-2 text-[#383F45] '>We offer a wide range of medical services to meet your health needs with care, precision, and compassion.</p>
+        <section className="section">
+          <div className="xl:w-[60%] text-center mx-auto mt-14">
+            <h1 className="font-[500] text-[36px]">Quality Healthcare Services We Provide</h1>
+            <p className="text-[18px] mt-2 text-[#383F45]">
+              We offer a wide range of medical services to meet your health needs with care, precision, and compassion.
+            </p>
           </div>
+
           <div className="px-6 py-12">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
-              {cards.map((card) => (
-                <div
-                  key={card.id}
-                  className="bg-white rounded-xl border-1 border-primary-200 overflow-hidden hover:shadow-lg transition duration-300"
-                >
-                  <img src={card.image} alt={card.title} className="px-6 pt-4" />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-[22px] text-[#1A1D1F] mb-2">{card.title}</h3>
-                    <p className="text-[18px] text-[#454C52] ">{card.text}</p>
-                  </div>
-                </div>
-              ))}
+              {cards.map((card) => {
+                const ref = useRef(null);
+                const inView = useInView(ref, { once: false, margin: "0px 0px -100px 0px" });
+
+                return (
+                  <motion.div
+                    key={card.id}
+                    ref={ref}
+                    className="bg-white rounded-xl border border-primary-200 overflow-hidden hover:shadow-lg transition duration-300"
+                    variants={cardVariants}
+                    initial="hidden"
+                    animate={inView ? "show" : "hidden"}
+                    whileHover={{ scale: 1.03 }}
+                  >
+                    <img src={card.image} alt={card.title} className="px-6 pt-4" />
+                    <div className="p-6">
+                      <h3 className="text-xl font-semibold text-[22px] text-[#1A1D1F] mb-2">
+                        {card.title}
+                      </h3>
+                      <p className="text-[18px] text-[#454C52]">{card.text}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -346,31 +395,42 @@ const Home = () => {
 
           {/* Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-1">
-            {doctors.slice(startIndex, startIndex + visibleCards).map((doc) => (
-              <div
-                key={doc.id}
-                className="bg-white p-4 rounded-md shadow-lg drop-shadow-[0_4px_8px_rgba(221, 124, 254, 0.4)]"
-              >
-                <img
-                  src={doc.image}
-                  alt={doc.name}
-                  className="w-full object-cover rounded-md mb-4"
-                />
-                <div className='flex justify-between'>
-                  <h3 className="text-[18px] font-[500] text-[#24292E]">{doc.name}</h3>
-                  <div className="flex bg-[#FFCC001F] rounded-full px-2 py-1 items-center gap-1">
-                    <FaStar className="text-yellow-400 text-sm" />
-                    <span className="text-sm text-gray-700">{doc.rating}</span>
+            {doctors.slice(startIndex, startIndex + visibleCards).map((doc) => {
+              const ref = useRef(null);
+              const isInView = useInView(ref, { once: false, margin: "0px 0px -100px 0px" });
+
+              return (
+                <motion.div
+                  key={doc.id}
+                  ref={ref}
+                  variants={cardVariants}
+                  initial="hidden"
+                  animate={isInView ? "show" : "hidden"}
+                  whileHover={{ scale: 1.03 }}
+                  className="bg-white p-4 rounded-md shadow-lg drop-shadow-[0_4px_8px_rgba(221,124,254,0.4)]"
+                >
+                  <img
+                    src={doc.image}
+                    alt={doc.name}
+                    className="w-full object-cover rounded-md mb-4"
+                  />
+                  <div className="flex justify-between">
+                    <h3 className="text-[18px] font-[500] text-[#24292E]">{doc.name}</h3>
+                    <div className="flex bg-[#FFCC001F] rounded-full px-2 py-1 items-center gap-1">
+                      <FaStar className="text-yellow-400 text-sm" />
+                      <span className="text-sm text-gray-700">{doc.rating}</span>
+                    </div>
                   </div>
-                </div>
-                <p className="text-sm text-primary-600 font-medium mb-2">
-                  {doc.specialization}
-                </p>
-                <hr className='text-[#E5E7EA] p-1 my-3' />
-                <p className="text-[14px] text-[#454C52]">{doc.description}</p>
-              </div>
-            ))}
+                  <p className="text-sm text-primary-600 font-medium mb-2">
+                    {doc.specialization}
+                  </p>
+                  <hr className="text-[#E5E7EA] p-1 my-3" />
+                  <p className="text-[14px] text-[#454C52]">{doc.description}</p>
+                </motion.div>
+              );
+            })}
           </div>
+
 
           {/* Right Arrow */}
           <button

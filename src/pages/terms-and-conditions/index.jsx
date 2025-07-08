@@ -16,7 +16,7 @@ const TermsAndConditions = () => {
             <section className='section'>
                 <p className='text-primary-500 my-5 italic text-[18px] font-[600] '>Effective May 20, 2025</p>
 
-                <p className='text-[16px] mt-5 font-[400] '>Welcome to our Doctor Consulting Platform ("Aignoz"). By using our services, you agree to the following terms and conditions:</p>
+                <p className='text-[16px] mt-5 font-[400] '>Welcome to our Doctor Consulting Platform ("AIGNOZ HEALTHCARE SOLUTIONS (OPC) PRIVATE LIMITED"). By using our services, you agree to the following terms and conditions:</p>
 
                 <h1 className='text-[22px] mt-10 font-[400] mb-5 '>Table of Contents</h1>
 
