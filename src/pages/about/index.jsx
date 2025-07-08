@@ -56,12 +56,12 @@ const About = () => {
         backgroundRepeat: 'no-repeat, no-repeat',
         backgroundSize: 'auto 350px, auto 200px',
       }} className="bg-contain bg-bottom pb-6 bg-no-repeat">
-        <section className='section mt-14 flex flex-col md:flex-row items-center gap-8'>
+        <section className='section mt-6 md:mt-14 flex flex-col md:flex-row items-center gap-8'>
 
           {/* Left Side - Text */}
           <div className="md:w-1/2">
 
-            <h2 className="text-[64px]/20 font-[500] text-[#24292E] my-4">
+            <h2 className="text-[50px]/14 md:text-[64px]/20 font-[500] text-[#24292E] my-4">
               <span className='font-[600] text-primary-500'>Your Health,</span> Our Commitment
             </h2>
             <p className="text-[#383F45] text-[16px] md:text-lg">
@@ -81,7 +81,7 @@ const About = () => {
       </div>
 
       {/* 2nd Section  */}
-      <section className='section-about py-[100px] bg-gradient-to-r from-transparent to-primary-50 flex flex-col md:flex-row items-center gap-8'>
+      <section className='section-about py-[100px] bg-gradient-to-r from-transparent to-primary-50 flex flex-col-reverse md:flex-row items-center gap-8'>
 
         {/* Left Side - Image */}
         <div className="md:w-1/2">
@@ -171,7 +171,7 @@ const About = () => {
       </section>
 
       {/* 4th Section  */}
-      <section className='section-about bg-gradient-to-r from-transparent to-primary-50 flex flex-col md:flex-row items-center gap-8'>
+      <section className='section-about bg-gradient-to-r from-transparent to-primary-50 flex flex-col-reverse md:flex-row items-center gap-8'>
 
         {/* Left Side - Image */}
         <div className="md:w-1/2">
