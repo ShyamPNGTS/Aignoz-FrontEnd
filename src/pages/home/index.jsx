@@ -297,6 +297,7 @@ const Home = () => {
           </div>
 
           {/* Right Side - Plus Symbol Layout */}
+          <div className="bg-no-repeat bg-cover bg-[url('/src/assets/images/home-effect-2.png')] bg-center">
           <div className="grid grid-cols-2 md:grid-cols-2 gap-0 ">
             {/* Box 1 */}
             {/* <div className="bg-white mt-14 h-max border-r-2 border-b-2 border-primary-500 py-10 p-5">
@@ -307,7 +308,7 @@ const Home = () => {
                 Personalized care plans for conditions like diabetes, hypertension, and asthma.
               </p>
             </div> */}
-            <div className="bg-white mt-14 h-max relative border-r-2 border-primary-500 py-10 p-5">
+            <div className="mt-14 h-max relative border-r-2 border-primary-500 py-10 p-5">
               {/* Bottom border as a separate div */}
               <div className="absolute bottom-0 left-3 h-[2px] bg-primary-500 w-[90%]"></div>
 
@@ -321,7 +322,7 @@ const Home = () => {
 
 
             {/* Box 2 */}
-            <div className="bg-white h-max relative p-5 mt-[40px] border-primary-500">
+            <div className="h-max relative p-5 mt-[40px] border-primary-500">
               {/* Bottom border as a custom div */}
               <div className="absolute bottom-0 right-3 h-[2px] bg-primary-500 w-[90%]"></div>
 
@@ -335,7 +336,7 @@ const Home = () => {
 
 
             {/* Box 3 */}
-            <div className="bg-white h-max border-r-2 border-primary-500  p-5 ">
+            <div className="h-max border-r-2 border-primary-500  p-5 ">
               <h2 className="text-[#1A1D1F] text-[22px] font-semibold mb-2">
                 Mental Wellness Programs
               </h2>
@@ -345,7 +346,7 @@ const Home = () => {
             </div>
 
             {/* Box 4 */}
-            <div className="bg-white h-max mt-[-70px] p-5">
+            <div className="h-max mt-[-70px] p-5">
               <h2 className="text-[#1A1D1F] text-[22px] font-semibold mb-2">
                 AI Chatbot Diagnosis
               </h2>
@@ -354,7 +355,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-
+          </div>
 
         </div>
       </section>
