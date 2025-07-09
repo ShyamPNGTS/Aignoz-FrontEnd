@@ -113,11 +113,11 @@ const Navbar = () => {
         </div> */}
 
         {/* Mobile Menu Toggle */}
-        {/* <div className="lg:hidden">
+        <div className="lg:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="text-2xl text-gray-700">
             {isOpen ? <HiX /> : <HiMenu />}
           </button>
-        </div> */}
+        </div>
       </div>
 
       {/* Mobile Menu */}

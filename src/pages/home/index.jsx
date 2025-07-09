@@ -174,7 +174,7 @@ const Home = () => {
       {/* Hero Section  */}
       <div>
         <section className="bg-[#BE34EA1A] md:pl-6">
-          <div className="max-w-7xl ml-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-4">
+          <div className="max-w-[1405px] ml-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-4">
             {/* Left Side - Text */}
             <div className="w-full md:w-1/2 text-center md:text-left">
               <h1
@@ -371,9 +371,9 @@ const Home = () => {
           <button
             onClick={handlePrev}
             disabled={startIndex === 0}
-            className="disabled:opacity-30 cursor-pointer bg-white shadow p-2 rounded-full mr-4"
+            className="disabled:opacity-30 cursor-pointer bg-white shadow p-1 md:p-2 rounded-full mr-0 md:mr-4"
           >
-            <HiArrowNarrowLeft className="text-2xl text-primary-500" />
+            <HiArrowNarrowLeft className="text-lg md:text-2xl text-primary-500" />
           </button>
 
           {/* Cards */}
@@ -409,9 +409,9 @@ const Home = () => {
           <button
             onClick={handleNext}
             disabled={startIndex + visibleCards >= doctors.length}
-            className="disabled:opacity-30 cursor-pointer bg-white shadow p-2 rounded-full ml-4"
+            className="disabled:opacity-30 cursor-pointer bg-white shadow p-1 md:p-2 rounded-full ml-0 md:ml-4"
           >
-            <HiArrowNarrowRight className="text-2xl text-primary-500" />
+            <HiArrowNarrowRight className="text-lg md:text-2xl text-primary-500" />
           </button>
         </div>
       </section>

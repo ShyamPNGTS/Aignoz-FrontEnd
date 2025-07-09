@@ -74,7 +74,7 @@ const About = () => {
             <img
               src={img1}
               alt="Descriptive Alt"
-              className="w-[550px] rounded-md"
+              className="w-[550px] rounded-4xl"
             />
           </div>
         </section>
