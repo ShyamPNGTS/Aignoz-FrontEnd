@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // Import Images here
 import heroImg from '../../assets/images/home-hero-doctor.png'
@@ -10,6 +13,7 @@ import doctor1 from '../../assets/images/home-doctor-1.png'
 import doctor2 from '../../assets/images/home-doctor-2.png'
 import doctor3 from '../../assets/images/home-doctor-3.png'
 import img1 from '../../assets/images/home-img.png'
+import img4 from "../../assets/images/productHigh.jpg";
 
 //Import Icons here
 import icon1 from '../../assets/icons/home-icon-1.png'
@@ -23,7 +27,7 @@ import icon8 from '../../assets/icons/home-icon-8.png'
 import icon9 from '../../assets/icons/home-icon-9.png'
 import icon10 from '../../assets/icons/home-icon-10.png'
 import { FaStar } from "react-icons/fa";
-import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
+import { HiArrowNarrowLeft, HiArrowNarrowRight, HiOutlineCheckCircle } from "react-icons/hi";
 import Testimonial from '../../components/testimonial'
 import HealthInsights from '../../components/health-insights'
 import { useNavigate } from 'react-router-dom'
@@ -39,6 +43,108 @@ const cardVariants = {
     },
   },
 };
+
+const pricingDoctor = [
+      {
+        title: "Free",
+        price: "₹0",
+        features: ["AI summary", "Plan generator"],
+        highlight: true,
+      },
+      {
+        title: "Pro Doctor",
+        price: "₹799",
+        features: ["Video explainers", "PDF exports"],
+        highlight: true,
+      },
+      {
+        title: "Genomic+",
+        price: "₹1,499",
+        features: ["Gene alerts", "Drug risks", "Genetic OCR"],
+        highlight: true,
+      },
+      {
+        title: "Clinic Suite",
+        price: "₹3,999",
+        features: ["Team view", "EHR", "IoT", "Export", "Integrations"],
+        highlight: true,
+      },
+    ]
+
+const pricingPatient = [
+  {
+    "title": "Lite",
+    "price": "₹0",
+    "features": ["AI messages", "Habit logs"],
+    "highlight": true
+  },
+  {
+    "title": "Prime",
+    "price": "₹299",
+    "features": ["Video messages"],
+    "highlight": true
+  },
+  {
+    "title": "Family+",
+    "price": "₹799",
+    "features": ["Up to 5 members", "AI health plan"],
+    "highlight": true
+  },
+  {
+    "title": "IoT Club",
+    "price": "₹1,499",
+    "features": ["IoT device", "Remote monitoring"],
+    "highlight": true
+  }
+]
+
+const testimonialsDoctor = [
+  {
+    quote: "“My AI assistant just saved me 30 minutes per patient.”",
+    author: "– Dr. Radhika, Fetal Medicine Specialist",
+  },
+  {
+    quote: "“Patients now thank me for issuing AI streak badges.”",
+    author: "– Dr. Saif, Lifestyle Clinic Director",
+  },
+  {
+    quote: "“I can’t imagine managing chronic care without it.”",
+    author: "– Dr. Meera, Diabetologist",
+  },
+  {
+    quote: "“Patients love their personalized AI health plans.”",
+    author: "– Dr. Arjun, Cardiologist",
+  },
+  {
+    quote: "“Saves staff time, improves care, and it’s easy to use.”",
+    author: "– Dr. Kavya, Preventive Clinic Head",
+  },
+];
+
+const sliderSettings = {
+  dots: true,
+  infinite: true,
+  speed: 800,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 4000,
+  responsive: [
+    {
+      breakpoint: 1024, // tablets
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 640, // mobile
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+  ],
+};
+
 
 
 const Home = () => {
@@ -178,17 +284,17 @@ const Home = () => {
             {/* Left Side - Text */}
             <div className="w-full md:w-1/2 text-center md:text-left">
               <h1
-               
+
                 className="text-3xl md:text-[50px] font-semibold text-gray-800 mb-2 leading-snug"
-               
+
               >
-                AI-Powered Care for Your Health
+                Your AI-Powered Clinical Copilot Is Here
               </h1>
 
               <h2
-                
+
                 className="text-3xl md:text-[50px] font-semibold text-primary-500 mb-1 leading-snug"
-                
+
               >
                 Smarter. Faster. Personal.
               </h2>
@@ -204,14 +310,14 @@ const Home = () => {
                   fill="none"
                 />
               </svg>
-              <p className="text-base text-[#383F45] mb-6 max-w-md mx-auto md:mx-0">
-                Get personalized care from trusted medical experts, guided by advanced AI. Book anytime, anywhere
+              <p className="text-base text-[#383F45] mb-6 max-w-xl mx-auto md:mx-0">
+                Dr. GPD helps doctors analyze symptoms, lab reports, ultrasound and genetic data in seconds — then turns insights into action for patients, complete with streak-based motivation and smart rewards.
               </p>
               <button
                 onClick={handleClick}
                 className="bg-primary-500 text-white mb-[33px] md:mb-0 px-6 py-3 rounded-full hover:bg-primary-700 transition"
               >
-                Book Appointment
+                Start Free Trial
               </button>
             </div>
 
@@ -298,9 +404,9 @@ const Home = () => {
 
           {/* Right Side - Plus Symbol Layout */}
           <div className="bg-no-repeat bg-cover bg-[url('/src/assets/images/home-effect-2.png')] bg-center">
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-0 ">
-            {/* Box 1 */}
-            {/* <div className="bg-white mt-14 h-max border-r-2 border-b-2 border-primary-500 py-10 p-5">
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-0 ">
+              {/* Box 1 */}
+              {/* <div className="bg-white mt-14 h-max border-r-2 border-b-2 border-primary-500 py-10 p-5">
               <h2 className="text-[#1A1D1F] text-[22px] font-semibold mb-2">
                 Chronic Disease Management
               </h2>
@@ -308,57 +414,230 @@ const Home = () => {
                 Personalized care plans for conditions like diabetes, hypertension, and asthma.
               </p>
             </div> */}
-            <div className="mt-14 h-max relative border-r-2 border-primary-500 py-10 p-5">
-              {/* Bottom border as a separate div */}
-              <div className="absolute bottom-0 left-3 h-[2px] bg-primary-500 w-[90%]"></div>
+              <div className="mt-14 h-max relative border-r-2 border-primary-500 py-10 p-5">
+                {/* Bottom border as a separate div */}
+                <div className="absolute bottom-0 left-3 h-[2px] bg-primary-500 w-[90%]"></div>
 
-              <h2 className="text-[#1A1D1F] text-[22px] font-semibold mb-2">
-                Chronic Disease Management
-              </h2>
-              <p className="text-[18px] text-[#454C52]">
-                Personalized care plans for conditions like diabetes, hypertension, and asthma.
-              </p>
+                <h2 className="text-[#1A1D1F] text-[22px] font-semibold mb-2">
+                  Chronic Disease Management
+                </h2>
+                <p className="text-[18px] text-[#454C52]">
+                  Personalized care plans for conditions like diabetes, hypertension, and asthma.
+                </p>
+              </div>
+
+
+              {/* Box 2 */}
+              <div className="h-max relative p-5 mt-[40px] border-primary-500">
+                {/* Bottom border as a custom div */}
+                <div className="absolute bottom-0 right-3 h-[2px] bg-primary-500 w-[90%]"></div>
+
+                <h2 className="text-[#1A1D1F] text-[22px] font-semibold mb-2">
+                  Preventive Screenings
+                </h2>
+                <p className="text-[18px] text-[#454C52]">
+                  Timely check-ups to detect issues before they become serious health concerns.
+                </p>
+              </div>
+
+
+              {/* Box 3 */}
+              <div className="h-max border-r-2 border-primary-500  p-5 ">
+                <h2 className="text-[#1A1D1F] text-[22px] font-semibold mb-2">
+                  Mental Wellness Programs
+                </h2>
+                <p className="text-[18px] text-[#454C52] ">
+                  Support for stress, anxiety, and overall mental well-being through holistic care.
+                </p>
+              </div>
+
+              {/* Box 4 */}
+              <div className="h-max mt-[-70px] p-5">
+                <h2 className="text-[#1A1D1F] text-[22px] font-semibold mb-2">
+                  AI Chatbot Diagnosis
+                </h2>
+                <p className="text-[18px] text-[#454C52] ">
+                  Aignoz’s chatbot collects symptoms and creates a report for faster doctor care.
+                </p>
+              </div>
             </div>
-
-
-            {/* Box 2 */}
-            <div className="h-max relative p-5 mt-[40px] border-primary-500">
-              {/* Bottom border as a custom div */}
-              <div className="absolute bottom-0 right-3 h-[2px] bg-primary-500 w-[90%]"></div>
-
-              <h2 className="text-[#1A1D1F] text-[22px] font-semibold mb-2">
-                Preventive Screenings
-              </h2>
-              <p className="text-[18px] text-[#454C52]">
-                Timely check-ups to detect issues before they become serious health concerns.
-              </p>
-            </div>
-
-
-            {/* Box 3 */}
-            <div className="h-max border-r-2 border-primary-500  p-5 ">
-              <h2 className="text-[#1A1D1F] text-[22px] font-semibold mb-2">
-                Mental Wellness Programs
-              </h2>
-              <p className="text-[18px] text-[#454C52] ">
-                Support for stress, anxiety, and overall mental well-being through holistic care.
-              </p>
-            </div>
-
-            {/* Box 4 */}
-            <div className="h-max mt-[-70px] p-5">
-              <h2 className="text-[#1A1D1F] text-[22px] font-semibold mb-2">
-                AI Chatbot Diagnosis
-              </h2>
-              <p className="text-[18px] text-[#454C52] ">
-                Aignoz’s chatbot collects symptoms and creates a report for faster doctor care.
-              </p>
-            </div>
-          </div>
           </div>
 
         </div>
       </section>
+
+      {/* Who's it for?  */}
+      <section className="section mt-10 px-4 md:px-12">
+        <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Who's It For?</h2>
+        <p className="text-center text-lg text-gray-600 mb-12">
+          Built for Doctors, Loved by Patients
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {[
+            "OB/GYNs & Fetal Medicine Specialists",
+            "Cardiologists, Diabetologists, Psychiatrists",
+            "Wellness & Preventive Clinics",
+            "Hospitals & Chain Clinics",
+            "Individuals & Families managing chronic/genetic risk",
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition"
+            >
+              <div className="w-12 h-12 mb-4 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-xl font-semibold">
+                {idx + 1}
+              </div>
+              <p className="text-gray-700 font-medium">{item}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Product Highlights  */}
+      <section className='section-about bg-gradient-to-r mt-10 from-transparent to-primary-50 flex flex-col-reverse md:flex-row items-center gap-8'>
+
+        {/* Left Side - Text */}
+        <div className="md:w-1/2">
+
+          <h2 className="text-[40px]/20 font-[500] text-[#24292E] my-4">
+            <span className='font-[600]'>Product Highlights</span>
+          </h2>
+          <p className="text-[#383F45] text-[16px] md:text-lg">
+            What You Can Do with Dr. GPD
+          </p>
+          <div className='flex items-center mt-6 md:w-[100%] gap-2'>
+            <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
+            <p>Analyze consults, labs, and genetic reports</p>
+          </div>
+          <div className='flex items-center mt-6 md:w-[100%] gap-2'>
+            <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
+            <p>Detect gene-drug interactions (pharmacogenomics)</p>
+          </div>
+          <div className='flex items-center mt-6 md:w-[100%] gap-2'>
+            <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
+            <p>Encourage patients for habit tracking & preventive action</p>
+          </div>
+          <div className='flex items-center mt-6 md:w-[100%] gap-2'>
+            <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
+            <p>Generate AI-powered health plans weekly</p>
+          </div>
+          <div className='flex items-center mt-6 md:w-[100%] gap-2'>
+            <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
+            <p>Recommend IoT devices based on diagnosis</p>
+          </div>
+          <div className='flex items-center mt-6 md:w-[100%] gap-2'>
+            <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
+            <p>Deliver personalized videos using digital doctor clones</p>
+          </div>
+        </div>
+
+        {/* Right Side - Image */}
+        <div className="md:w-1/2">
+          <img
+            src={img4}
+            alt="Descriptive Alt"
+            className="w-[550px] rounded-2xl"
+          />
+        </div>
+
+      </section>
+
+      {/* Pricing Section  */}
+      <section className="section mt-16 px-4 md:px-12">
+  <h2 className="text-4xl font-bold text-center mb-4 text-gray-800">
+    Pricing Section
+  </h2>
+  <p className="text-center text-lg text-gray-600 mb-10">
+    Flexible Plans for Doctors & Patients
+  </p>
+
+  <div>
+    <h2 className="text-xl font-bold mb-4 text-gray-800">
+    Pricing Plan for Doctors :
+  </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    {
+   pricingDoctor.map((plan, idx) => (
+  <div
+    key={idx}
+    className={`flex flex-col justify-between h-full rounded-2xl border ${
+      plan.highlight ? "border-primary-600 shadow-lg" : "border-gray-200"
+    } p-6 transition hover:shadow-xl bg-white`}
+  >
+    <div>
+      <h3 className="text-xl font-semibold mb-2 text-gray-800">
+        {plan.title}
+      </h3>
+      <p className="text-2xl font-bold text-primary-600 mb-4">{plan.price}</p>
+      <ul className="text-gray-600 space-y-2 mb-6">
+        {plan.features.map((feature, i) => (
+          <li key={i} className="flex items-center gap-2">
+            <span className="text-black">✔</span> {feature}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    {/* Button aligned to bottom */}
+    <button
+      className={`w-full mt-auto py-2 rounded-lg font-medium ${
+        plan.highlight
+          ? "bg-primary-600 text-white hover:bg-primary-700"
+          : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+      }`}
+    >
+      {plan.price === "₹0" ? "Start Free" : "Choose Plan"}
+    </button>
+  </div>
+))}
+
+  </div>
+  </div>
+
+  <div>
+    <h2 className="text-xl mt-14 font-bold mb-4 text-gray-800">
+    Pricing Plan for Patients :
+  </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    {
+   pricingPatient.map((plan, idx) => (
+  <div
+    key={idx}
+    className={`flex flex-col justify-between h-full rounded-2xl border ${
+      plan.highlight ? "border-primary-600 shadow-lg" : "border-gray-200"
+    } p-6 transition hover:shadow-xl bg-white`}
+  >
+    <div>
+      <h3 className="text-xl font-semibold mb-2 text-gray-800">
+        {plan.title}
+      </h3>
+      <p className="text-2xl font-bold text-primary-600 mb-4">{plan.price}</p>
+      <ul className="text-gray-600 space-y-2 mb-6">
+        {plan.features.map((feature, i) => (
+          <li key={i} className="flex items-center gap-2">
+            <span className="text-black">✔</span> {feature}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    {/* Button aligned to bottom */}
+    <button
+      className={`w-full mt-auto py-2 rounded-lg font-medium ${
+        plan.highlight
+          ? "bg-primary-600 text-white hover:bg-primary-700"
+          : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+      }`}
+    >
+      {plan.price === "₹0" ? "Start Free" : "Choose Plan"}
+    </button>
+  </div>
+))}
+
+  </div>
+  </div>
+</section>
 
       {/* Meet Our Doctors Section  */}
       <section className='section mt-2'>
@@ -416,6 +695,24 @@ const Home = () => {
           </button>
         </div>
       </section>
+
+      <section className="section mt-16 px-4 md:px-12">
+      <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
+        Doctor Testimonials
+      </h2>
+
+      <Slider {...sliderSettings}>
+        {testimonialsDoctor.map((item, idx) => (
+          <div key={idx} className="px-4 mb-8">
+            <div className="bg-white border-b-1 border-r-1 border-gray-200 shadow-md p-6 rounded-2xl h-full">
+              <p className="text-lg text-gray-700 italic mb-4">{item.quote}</p>
+              <p className="text-sm text-gray-500 font-medium">{item.author}</p>
+            </div>
+          </div>
+        ))}
+      </Slider>
+    </section>
+
 
       {/* Client Testimonial Section  */}
       <section className='section bg-[#F9FCF8] mt-8'>
@@ -475,6 +772,37 @@ const Home = () => {
         </div>
         <HealthInsights limit={3} />
       </section>
+
+      <section className="section mt-20 text-center px-4 md:px-12">
+  <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+    Join the Future of Medicine
+  </h2>
+  <p className="text-lg text-gray-600 mb-10">
+    Get started today with AI-powered health tools.
+  </p>
+
+  <div className="flex flex-col md:flex-row justify-center items-center gap-10">
+    <a
+      href="#"
+      className="bg-primary-600 text-white px-10 py-3 rounded-full font-semibold hover:bg-primary-700 transition"
+    >
+      Doctors
+    </a>
+    <a
+      href="#"
+      className="bg-primary-600 text-white px-10 py-3 rounded-full font-semibold hover:bg-primary-700 transition"
+    >
+      Clinics
+    </a>
+    <a
+      href="#"
+      className="bg-primary-600 text-white px-10 py-3 rounded-full font-semibold hover:bg-primary-700 transition"
+    >
+      Patients
+    </a>
+  </div>
+</section>
+
 
       {/* Newsletter Section  */}
       {/* <div className="bg-[url('/src/assets/images/home-newsletter-bg.png')] bg-size-[auto_600px] bg-no-repeat bg-bottom-right bg-contain">
