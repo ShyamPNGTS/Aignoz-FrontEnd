@@ -45,31 +45,31 @@ const cardVariants = {
 };
 
 const pricingDoctor = [
-      {
-        title: "Free",
-        price: "₹0",
-        features: ["AI summary", "Plan generator"],
-        highlight: true,
-      },
-      {
-        title: "Pro Doctor",
-        price: "₹799",
-        features: ["Video explainers", "PDF exports"],
-        highlight: true,
-      },
-      {
-        title: "Genomic+",
-        price: "₹1,499",
-        features: ["Gene alerts", "Drug risks", "Genetic OCR"],
-        highlight: true,
-      },
-      {
-        title: "Clinic Suite",
-        price: "₹3,999",
-        features: ["Team view", "EHR", "IoT", "Export", "Integrations"],
-        highlight: true,
-      },
-    ]
+  {
+    title: "Free",
+    price: "₹0",
+    features: ["AI summary", "Plan generator"],
+    highlight: true,
+  },
+  {
+    title: "Pro Doctor",
+    price: "₹799",
+    features: ["Video explainers", "PDF exports"],
+    highlight: true,
+  },
+  {
+    title: "Genomic+",
+    price: "₹1,499",
+    features: ["Gene alerts", "Drug risks", "Genetic OCR"],
+    highlight: true,
+  },
+  {
+    title: "Clinic Suite",
+    price: "₹3,999",
+    features: ["Team view", "EHR", "IoT", "Export", "Integrations"],
+    highlight: true,
+  },
+]
 
 const pricingPatient = [
   {
@@ -278,81 +278,77 @@ const Home = () => {
   return (
     <>
       {/* Hero Section  */}
-      <div>
-        <section className="bg-[#BE34EA1A] md:pl-6">
-          <div className="max-w-[1405px] ml-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-4">
-            {/* Left Side - Text */}
-            <div className="w-full md:w-1/2 text-center md:text-left">
-              <h1
+    <div className="relative bg-[#BE34EA1A] overflow-hidden">
+  <section className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-4 px-6 relative z-10">
+    {/* Left Side - Text */}
+    <div className="w-full md:w-1/2 my-10  text-center md:text-left">
+      <h1 className="text-3xl md:text-[50px] font-semibold text-gray-800 mb-2 leading-snug">
+        Your AI-Powered Clinical Copilot Is Here
+      </h1>
 
-                className="text-3xl md:text-[50px] font-semibold text-gray-800 mb-2 leading-snug"
+      <h2 className="text-3xl md:text-[50px] font-semibold text-primary-500 mb-1 leading-snug">
+        Smarter. Faster. Personal.
+      </h2>
 
-              >
-                Your AI-Powered Clinical Copilot Is Here
-              </h1>
+      <svg
+        className="w-1/2 h-3 mb-6 z-0 mx-auto md:mx-0"
+        viewBox="0 0 100 10"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0,10 Q50,-10 100,10"
+          stroke="#BE34EA"
+          strokeWidth="3"
+          fill="none"
+        />
+      </svg>
 
-              <h2
+      <p className="text-base text-[#383F45] mb-6 max-w-xl mx-auto md:mx-0">
+        Dr. GPD helps doctors analyze symptoms, lab reports, ultrasound and
+        genetic data in seconds — then turns insights into action for
+        patients, complete with streak-based motivation and smart rewards.
+      </p>
 
-                className="text-3xl md:text-[50px] font-semibold text-primary-500 mb-1 leading-snug"
+      <button
+        onClick={handleClick}
+        className="bg-primary-500 text-white mb-[33px] md:mb-0 px-6 py-3 rounded-full hover:bg-primary-700 transition"
+      >
+        Start Free Trial
+      </button>
+    </div>
+  </section>
 
-              >
-                Smarter. Faster. Personal.
-              </h2>
-              <svg
-                className="w-1/2 h-3 mb-6 z-0 mx-auto md:mx-0"
-                viewBox="0 0 100 10"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0,10 Q50,-10 100,10"
-                  stroke="#BE34EA"
-                  strokeWidth="3"
-                  fill="none"
-                />
-              </svg>
-              <p className="text-base text-[#383F45] mb-6 max-w-xl mx-auto md:mx-0">
-                Dr. GPD helps doctors analyze symptoms, lab reports, ultrasound and genetic data in seconds — then turns insights into action for patients, complete with streak-based motivation and smart rewards.
-              </p>
-              <button
-                onClick={handleClick}
-                className="bg-primary-500 text-white mb-[33px] md:mb-0 px-6 py-3 rounded-full hover:bg-primary-700 transition"
-              >
-                Start Free Trial
-              </button>
-            </div>
+  {/* Right Side - Image (full bleed to right edge) */}
+  <div className="absolute  hidden md:block my-10  -bottom-10 right-0 w-1/2">
+    <img
+      src={bgdoctor}
+      alt=""
+      className="absolute bottom-0 right-0 h-[60%] w-[160%] opacity-40 -z-10"
+    />
+    <img
+      src={heroImg}
+      alt="Spiritual healing"
+      className="w-full h-auto relative z-30"
+    />
+  </div>
 
-            {/* Right Side - Image */}
-            <div className="w-full md:w-1/2 relative pr-0">
-              <img
-                src={bgdoctor}
-                alt=""
-                className="absolute bottom-0 right-0 h-[60%] w-[160%] hidden md:block opacity-40 -z-10"
-              />
-              <img
-                src={heroImg}
-                alt="Spiritual healing"
-                className=" w-[100%] md:w-[90%] max-w-md md:max-w-full md:h-auto h-auto relative z-10 md:ml-auto"
-              />
-            </div>
-          </div>
-        </section>
+  {/* Stats Bar */}
+  <div className="relative z-20 w-full py-6 flex flex-col md:flex-row gap-6 md:gap-0 justify-around text-white bg-[#BE34EAE5]">
+    <div className="flex items-center flex-col">
+      <h1 className="text-[40px] font-semibold">24/7</h1>
+      <p className="text-base">Online Support</p>
+    </div>
+    <div className="flex items-center flex-col">
+      <h1 className="text-[40px] font-semibold">100+</h1>
+      <p className="text-base">Doctors</p>
+    </div>
+    <div className="flex items-center flex-col">
+      <h1 className="text-[40px] font-semibold">1M+</h1>
+      <p className="text-base">Active Patients</p>
+    </div>
+  </div>
+</div>
 
-        {/* Stats Bar */}
-        <div className="w-full py-6 flex flex-col md:flex-row gap-6 md:gap-0 justify-around text-white bg-[#BE34EAE5]">
-          <div className="flex items-center flex-col">
-            <h1 className="text-[40px] font-semibold">24/7</h1>
-            <p className="text-base">Online Support</p>
-          </div>
-          <div className="flex items-center flex-col">
-            <h1 className="text-[40px] font-semibold">100+</h1>
-            <p className="text-base">Doctors</p>
-          </div>
-          <div className="flex items-center flex-col">
-            <h1 className="text-[40px] font-semibold">1M+</h1>
-            <p className="text-base">Active Patients</p>
-          </div>
-        </div>
-      </div>
 
 
       {/* Cards Section  */}
@@ -545,42 +541,41 @@ const Home = () => {
 
       {/* Pricing Section  */}
       <section className="section mt-16 px-4 md:px-12">
-  <h2 className="text-4xl font-bold text-center mb-4 text-gray-800">
-    Pricing Section
-  </h2>
-  <p className="text-center text-lg text-gray-600 mb-10">
-    Flexible Plans for Doctors & Patients
-  </p>
+        <h2 className="text-4xl font-bold text-center mb-4 text-gray-800">
+          Pricing Section
+        </h2>
+        <p className="text-center text-lg text-gray-600 mb-10">
+          Flexible Plans for Doctors & Patients
+        </p>
 
-  <div>
-    <h2 className="text-xl font-bold mb-4 text-gray-800">
-    Pricing Plan for Doctors :
-  </h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-    {
-   pricingDoctor.map((plan, idx) => (
-  <div
-    key={idx}
-    className={`flex flex-col justify-between h-full rounded-2xl border ${
-      plan.highlight ? "border-primary-600 shadow-lg" : "border-gray-200"
-    } p-6 transition hover:shadow-xl bg-white`}
-  >
-    <div>
-      <h3 className="text-xl font-semibold mb-2 text-gray-800">
-        {plan.title}
-      </h3>
-      <p className="text-2xl font-bold text-primary-600 mb-4">{plan.price}</p>
-      <ul className="text-gray-600 space-y-2 mb-6">
-        {plan.features.map((feature, i) => (
-          <li key={i} className="flex items-center gap-2">
-            <span className="text-black">✔</span> {feature}
-          </li>
-        ))}
-      </ul>
-    </div>
+        <div>
+          <h2 className="text-xl font-bold mb-4 text-gray-800">
+            Pricing Plan for Doctors :
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {
+              pricingDoctor.map((plan, idx) => (
+                <div
+                  key={idx}
+                  className={`flex flex-col justify-between h-full rounded-2xl border ${plan.highlight ? "border-primary-600 shadow-lg" : "border-gray-200"
+                    } p-6 transition hover:shadow-xl bg-white`}
+                >
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                      {plan.title}
+                    </h3>
+                    <p className="text-2xl font-bold text-primary-600 mb-4">{plan.price}</p>
+                    <ul className="text-gray-600 space-y-2 mb-6">
+                      {plan.features.map((feature, i) => (
+                        <li key={i} className="flex items-center gap-2">
+                          <span className="text-black">✔</span> {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-    {/* Button aligned to bottom */}
-    <button
+
+                  {/* <button
       className={`w-full mt-auto py-2 rounded-lg font-medium ${
         plan.highlight
           ? "bg-primary-600 text-white hover:bg-primary-700"
@@ -588,42 +583,40 @@ const Home = () => {
       }`}
     >
       {plan.price === "₹0" ? "Start Free" : "Choose Plan"}
-    </button>
-  </div>
-))}
+    </button> */}
+                </div>
+              ))}
 
-  </div>
-  </div>
+          </div>
+        </div>
 
-  <div>
-    <h2 className="text-xl mt-14 font-bold mb-4 text-gray-800">
-    Pricing Plan for Patients :
-  </h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-    {
-   pricingPatient.map((plan, idx) => (
-  <div
-    key={idx}
-    className={`flex flex-col justify-between h-full rounded-2xl border ${
-      plan.highlight ? "border-primary-600 shadow-lg" : "border-gray-200"
-    } p-6 transition hover:shadow-xl bg-white`}
-  >
-    <div>
-      <h3 className="text-xl font-semibold mb-2 text-gray-800">
-        {plan.title}
-      </h3>
-      <p className="text-2xl font-bold text-primary-600 mb-4">{plan.price}</p>
-      <ul className="text-gray-600 space-y-2 mb-6">
-        {plan.features.map((feature, i) => (
-          <li key={i} className="flex items-center gap-2">
-            <span className="text-black">✔</span> {feature}
-          </li>
-        ))}
-      </ul>
-    </div>
+        <div>
+          <h2 className="text-xl mt-14 font-bold mb-4 text-gray-800">
+            Pricing Plan for Patients :
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {
+              pricingPatient.map((plan, idx) => (
+                <div
+                  key={idx}
+                  className={`flex flex-col justify-between h-full rounded-2xl border ${plan.highlight ? "border-primary-600 shadow-lg" : "border-gray-200"
+                    } p-6 transition hover:shadow-xl bg-white`}
+                >
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                      {plan.title}
+                    </h3>
+                    <p className="text-2xl font-bold text-primary-600 mb-4">{plan.price}</p>
+                    <ul className="text-gray-600 space-y-2 mb-6">
+                      {plan.features.map((feature, i) => (
+                        <li key={i} className="flex items-center gap-2">
+                          <span className="text-black">✔</span> {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-    {/* Button aligned to bottom */}
-    <button
+                  {/* <button
       className={`w-full mt-auto py-2 rounded-lg font-medium ${
         plan.highlight
           ? "bg-primary-600 text-white hover:bg-primary-700"
@@ -631,13 +624,13 @@ const Home = () => {
       }`}
     >
       {plan.price === "₹0" ? "Start Free" : "Choose Plan"}
-    </button>
-  </div>
-))}
+    </button> */}
+                </div>
+              ))}
 
-  </div>
-  </div>
-</section>
+          </div>
+        </div>
+      </section>
 
       {/* Meet Our Doctors Section  */}
       <section className='section mt-2'>
@@ -697,21 +690,21 @@ const Home = () => {
       </section>
 
       <section className="section mt-16 px-4 md:px-12">
-      <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
-        Doctor Testimonials
-      </h2>
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
+          Doctor Testimonials
+        </h2>
 
-      <Slider {...sliderSettings}>
-        {testimonialsDoctor.map((item, idx) => (
-          <div key={idx} className="px-4 mb-8">
-            <div className="bg-white border-b-1 border-r-1 border-gray-200 shadow-md p-6 rounded-2xl h-full">
-              <p className="text-lg text-gray-700 italic mb-4">{item.quote}</p>
-              <p className="text-sm text-gray-500 font-medium">{item.author}</p>
+        <Slider {...sliderSettings}>
+          {testimonialsDoctor.map((item, idx) => (
+            <div key={idx} className="px-4 mb-8">
+              <div className="bg-white border-b-1 border-r-1 border-gray-200 shadow-md p-6 rounded-2xl h-full">
+                <p className="text-lg text-gray-700 italic mb-4">{item.quote}</p>
+                <p className="text-sm text-gray-500 font-medium">{item.author}</p>
+              </div>
             </div>
-          </div>
-        ))}
-      </Slider>
-    </section>
+          ))}
+        </Slider>
+      </section>
 
 
       {/* Client Testimonial Section  */}
@@ -774,38 +767,38 @@ const Home = () => {
       </section>
 
       <section className="section mt-20 text-center px-4 md:px-12">
-  <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-    Join the Future of Medicine
-  </h2>
-  <p className="text-lg text-gray-600 mb-10">
-    Get started today with AI-powered health tools.
-  </p>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          Join the Future of Medicine
+        </h2>
+        <p className="text-lg text-gray-600 mb-10">
+          Get started today with AI-powered health tools.
+        </p>
 
-  <div className="flex flex-col md:flex-row justify-center items-center gap-10">
-    <a
-      href="#"
-      className="bg-primary-600 text-white px-10 py-3 rounded-full font-semibold hover:bg-primary-700 transition"
-    >
-      Doctors
-    </a>
-    <a
-      href="#"
-      className="bg-primary-600 text-white px-10 py-3 rounded-full font-semibold hover:bg-primary-700 transition"
-    >
-      Clinics
-    </a>
-    <a
-      href="#"
-      className="bg-primary-600 text-white px-10 py-3 rounded-full font-semibold hover:bg-primary-700 transition"
-    >
-      Patients
-    </a>
-  </div>
-</section>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-10">
+          <a
+            href="#"
+            className="bg-primary-600 text-white px-10 py-3 rounded-full font-semibold hover:bg-primary-700 transition"
+          >
+            Doctors
+          </a>
+          <a
+            href="#"
+            className="bg-primary-600 text-white px-10 py-3 rounded-full font-semibold hover:bg-primary-700 transition"
+          >
+            Clinics
+          </a>
+          <a
+            href="#"
+            className="bg-primary-600 text-white px-10 py-3 rounded-full font-semibold hover:bg-primary-700 transition"
+          >
+            Patients
+          </a>
+        </div>
+      </section>
 
 
       {/* Newsletter Section  */}
-      {/* <div className="bg-[url('/src/assets/images/home-newsletter-bg.png')] bg-size-[auto_600px] bg-no-repeat bg-bottom-right bg-contain">
+      {/* <div className="bg-[url('/src/assets/images/home-newsletter-bg.png')]  bg-no-repeat bg-bottom-right bg-contain">
   <section className="my-10 px-4 sm:px-6 lg:px-0">
     <div className="max-w-4xl mx-auto shadow-md shadow-primary-200 rounded-[30px] py-12 sm:py-16 px-4 sm:px-10 md:px-20 text-center bg-white">
       <h2 className="text-2xl sm:text-3xl font-semibold text-[#000000] mb-4">

@@ -53,7 +53,7 @@ const Footer = () => {
                         </div>
 
                         {/* Specialists */}
-                        <div>
+                        {/* <div>
                             <h4 className="text-[15px] text-[#24292E] font-[600] mb-4">Our Specialists</h4>
                             <ul className="space-y-2 text-sm">
                                 <li className="hover:text-primary-600 text-[#24292E] cursor-pointer">General Consultation</li>
@@ -62,7 +62,7 @@ const Footer = () => {
                                 <li className="hover:text-primary-600 text-[#24292E] cursor-pointer">Preventive Health Checkups</li>
                                 <li className="hover:text-primary-600 text-[#24292E] cursor-pointer">Telemedicine</li>
                             </ul>
-                        </div>
+                        </div> */}
 
                         {/* Policies */}
                         <div>
@@ -79,8 +79,8 @@ const Footer = () => {
                         <div>
                             <h4 className="text-[15px] text-[#24292E] font-[600] mb-4">Contact Us</h4>
                             <ul className="space-y-2 text-sm">
-                                <li className='flex text-[#24292E] items-center'><img src={email} className='mr-2' alt="" /> aignoz@gmail.com</li>
-                                <li className='flex text-[#24292E] items-center'><img src={phone} className='mr-2' alt="" /> +1 234 567 8901</li>
+                                <li className='flex text-[#24292E] items-center'><img src={email} className='mr-2' alt="" /> myprognozis@gmail.com</li>
+                                <li className='flex text-[#24292E] items-center'><img src={phone} className='mr-2' alt="" /> 9597557036</li>
 
                             </ul>
                         </div>

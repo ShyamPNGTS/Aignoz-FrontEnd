@@ -3,6 +3,11 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 import cardImg from "../../assets/images/about-experts-img.png"
+import doc1 from "../../assets/images/doc-1.jpg"
+import doc2 from "../../assets/images/doc-2.jpg"
+import doc3 from "../../assets/images/doc-3.jpg"
+import doc4 from "../../assets/images/doc-4.jpg"
+import doc5 from "../../assets/images/doc-5.jpg"
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -16,51 +21,59 @@ const cardVariants = {
   },
 };
 
+const experts = [
+  {
+    id: 1,
+    name: "Dr. Srinidhi B V",
+    speciality: "Cardiologist",
+    description:
+      "Dr. Sharma specializes in heart health, with expertise in managing hypertension, arrhythmias, and preventive cardiac care.",
+    image: doc1,
+  },
+  {
+    id: 2,
+    name: "Dr. Aruna Verma",
+    speciality: "Dermatologist",
+    description:
+      "Dr. Verma provides advanced treatments for skin, hair, and nail disorders, including acne, eczema, and cosmetic dermatology.",
+    image: doc2,
+  },
+  {
+    id: 3,
+    name: "Dr. Kavit Menon",
+    speciality: "Pediatrician",
+    description:
+      "With over 12 years of experience, Dr. Menon is dedicated to children’s health, covering growth, vaccinations, and nutrition.",
+    image: cardImg,
+  },
+  {
+    id: 4,
+    name: "Dr. Rakesh Gupta",
+    speciality: "Orthopedic Surgeon",
+    description:
+      "Dr. Gupta is an expert in treating bone, joint, and spine conditions, specializing in sports injuries and joint replacements.",
+    image: doc3,
+  },
+  {
+    id: 5,
+    name: "Dr. Neha Kapoor",
+    speciality: "Gynecologist",
+    description:
+      "Dr. Kapoor focuses on women’s health, offering care in pregnancy, fertility, menstrual health, and preventive screenings.",
+    image: doc4,
+  },
+  {
+    id: 6,
+    name: "Dr. Sanjay Rao",
+    speciality: "Neurologist",
+    description:
+      "Dr. Rao is experienced in diagnosing and managing neurological disorders such as epilepsy, stroke, migraines, and dementia.",
+    image: doc5,
+  },
+];
 
- const experts = [
-        {
-            id: 1,
-            name: "Dr. Rahul Jain",
-            speciality: "General Physician",
-            description: "With over 10 years of experience, Dr. Khan provides holistic care and expert medical advice for patients of all ages. ",
-            image: cardImg,
-        },
-        {
-            id: 2,
-            name: "Dr. Rahul Jain",
-            speciality: "General Physician",
-            description: "With over 10 years of experience, Dr. Khan provides holistic care and expert medical advice for patients of all ages. ",
-            image: cardImg,
-        },
-        {
-            id: 3,
-            name: "Dr. Rahul Jain",
-            speciality: "General Physician",
-            description: "With over 10 years of experience, Dr. Khan provides holistic care and expert medical advice for patients of all ages. ",
-            image: cardImg,
-        },
-        {
-            id: 4,
-            name: "Dr. Rahul Jain",
-            speciality: "General Physician",
-            description: "With over 10 years of experience, Dr. Khan provides holistic care and expert medical advice for patients of all ages.",
-            image: cardImg,
-        },
-        {
-            id: 5,
-            name: "Dr. Rahul Jain",
-            speciality: "General Physician",
-            description: "With over 10 years of experience, Dr. Khan provides holistic care and expert medical advice for patients of all ages.",
-            image: cardImg,
-        },
-        {
-            id: 6,
-            name: "Dr. Rahul Jain",
-            speciality: "General Physician",
-            description: "With over 10 years of experience, Dr. Khan provides holistic care and expert medical advice for patients of all ages.",
-            image: cardImg,
-        },
-    ];
+
+
 const Experts = () => {
   return (
     <div className="relative mt-12 flex items-center">
@@ -73,7 +86,7 @@ const Experts = () => {
                 <img
                     src={doc.image}
                     alt={doc.name}
-                    className="w-full object-cover rounded-md mb-4"
+                    className="mx-auto h-80 rounded-md mb-4"
                 />
                 <div className='flex justify-between'>
                     <h3 className="text-[26px] font-[500] text-[#1A1D1F]">{doc?.name}</h3>
