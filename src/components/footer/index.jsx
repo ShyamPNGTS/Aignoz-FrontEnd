@@ -77,7 +77,7 @@ const Footer = () => {
 
                         {/* Contact Us */}
                         <div>
-                            <h4 className="text-[15px] text-[#24292E] font-[600] mb-4">Contact Us</h4>
+                            <h4 className="text-[15px] text-[#24292E] font-[600] mb-4">Contact us</h4>
                             <ul className="space-y-2 text-sm">
                                 <li className='flex text-[#24292E] items-center'><img src={email} className='mr-2' alt="" /> myprognozis@gmail.com</li>
                                 <li className='flex text-[#24292E] items-center'><img src={phone} className='mr-2' alt="" /> 9597557036</li>
