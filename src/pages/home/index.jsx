@@ -26,6 +26,13 @@ import icon7 from '../../assets/icons/home-icon-7.png'
 import icon8 from '../../assets/icons/home-icon-8.png'
 import icon9 from '../../assets/icons/home-icon-9.png'
 import icon10 from '../../assets/icons/home-icon-10.png'
+import doc1 from "../../assets/images/doc-1.jpg"
+import doc2 from "../../assets/images/doc-2.jpg"
+import doc3 from "../../assets/images/doc-3.jpg"
+import doc4 from "../../assets/images/doc-4.jpg"
+import doc5 from "../../assets/images/doc-5.jpg"
+import cardImg from "../../assets/images/about-experts-img.png"
+
 import { FaStar } from "react-icons/fa";
 import { HiArrowNarrowLeft, HiArrowNarrowRight, HiOutlineCheckCircle } from "react-icons/hi";
 import Testimonial from '../../components/testimonial'
@@ -195,37 +202,59 @@ const Home = () => {
   ];
   const doctors = [
     {
-      id: 1,
-      name: "Dr. Alice Smith",
-      specialization: "Cardiologist",
-      description: "Specialized in medical imaging and analysis, ensuring accurate and timely diagnostic support for every patient.",
-      image: doctor1,
-      rating: 4.5,
-    },
-    {
-      id: 2,
-      name: "Dr. Ravi Patel",
-      specialization: "Endocrinologist",
-      description: "Specialized in medical imaging and analysis, ensuring accurate and timely diagnostic support for every patient.",
-      image: doctor2,
-      rating: 4.2,
-    },
-    {
-      id: 3,
-      name: "Dr. Fatima Khan",
-      specialization: "Dermatologist",
-      description: "Specialized in medical imaging and analysis, ensuring accurate and timely diagnostic support for every patient.",
-      image: doctor3,
-      rating: 4.4,
-    },
-    {
-      id: 4,
-      name: "Dr. Daniel Kim",
-      specialization: "Neurologist",
-      description: "Specialized in medical imaging and analysis, ensuring accurate and timely diagnostic support for every patient.",
-      image: doctor1,
-      rating: 4.8,
-    },
+        id: 1,
+        name: "Dr. Srinidhi B V",
+        specialization: "Cardiologist",
+        description:
+          "Dr. Sharma specializes in heart health, with expertise in managing hypertension, arrhythmias, and preventive cardiac care.",
+        image: doc1,
+        rating : 4.5
+      },
+      {
+        id: 2,
+        name: "Dr. Aruna Verma",
+        specialization: "Dermatologist",
+        description:
+          "Dr. Verma provides advanced treatments for skin, hair, and nail disorders, including acne, eczema, and cosmetic dermatology.",
+        image: doc2,
+        rating : 4.2
+      },
+      {
+        id: 3,
+        name: "Dr. Kavit Menon",
+        specialization: "Pediatrician",
+        description:
+          "With over 12 years of experience, Dr. Menon is dedicated to children’s health, covering growth, vaccinations, and nutrition.",
+        image: cardImg,
+        rating : 4.0
+      },
+      {
+        id: 4,
+        name: "Dr. Rakesh Gupta",
+        specialization: "Orthopedic Surgeon",
+        description:
+          "Dr. Gupta is an expert in treating bone, joint, and spine conditions, specializing in sports injuries and joint replacements.",
+        image: doc3,
+        rating : 3.8
+      },
+      {
+        id: 5,
+        name: "Dr. Neha Kapoor",
+        specialization: "Gynecologist",
+        description:
+          "Dr. Kapoor focuses on women’s health, offering care in pregnancy, fertility, menstrual health, and preventive screenings.",
+        image: doc4,
+        rating : 4.3
+      },
+      {
+        id: 6,
+        name: "Dr. Sanjay Rao",
+        specialization: "Neurologist",
+        description:
+          "Dr. Rao is experienced in diagnosing and managing neurological disorders such as epilepsy, stroke, migraines, and dementia.",
+        image: doc5,
+        rating : 4.9
+      },
   ];
 
   const [startIndex, setStartIndex] = useState(0);
@@ -659,7 +688,7 @@ const Home = () => {
                 <img
                   src={doc.image}
                   alt={doc.name}
-                  className="w-full object-cover rounded-md mb-4"
+                  className="mx-auto h-80 rounded-md mb-4"
                 />
                 <div className='flex justify-between'>
                   <h3 className="text-[18px] font-[500] text-[#24292E]">{doc.name}</h3>
