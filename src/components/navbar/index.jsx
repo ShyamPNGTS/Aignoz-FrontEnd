@@ -8,6 +8,7 @@ import { FiLogOut, FiUser } from 'react-icons/fi';
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
+   { name: 'Program', path: '/program' },
   { name: 'Blogs', path: '/blogs' },
   { name: 'Appointment', path: '/appointment' },
   { name: 'Contact', path: '/contact', label: 'Contact' },

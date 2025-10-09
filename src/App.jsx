@@ -18,6 +18,7 @@ import AppointmentDetail from './pages/appointment-detail';
 import ResetPassword from './pages/reset-password';
 import AppointmentConfirm from './pages/appointment-detail-confirm';
 import ShippingPolicy from './pages/shipping-policy';
+import Program from './pages/program';
 
 function AppWrapper() {
   const location = useLocation();
@@ -30,6 +31,7 @@ function AppWrapper() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/program" element={<Program />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blogs/:id" element={<BlogDetail />} />
         <Route path="/login" element={<Login />} />

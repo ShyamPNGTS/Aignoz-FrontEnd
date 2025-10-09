@@ -292,13 +292,13 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    const token = localStorage.getItem("token");
+    // const token = localStorage.getItem("token");
 
-    if (token) {
+    // if (token) {
       navigate("/appointment");
-    } else {
-      navigate("/login");
-    }
+    // } else {
+    //   navigate("/login");
+    // }
   };
 
   const doctorRefs = useRef(doctors.map(() => React.createRef()));
@@ -332,10 +332,19 @@ const Home = () => {
         />
       </svg>
 
-      <p className="text-base text-[#383F45] mb-6 max-w-xl mx-auto md:mx-0">
+      {/* <p className="text-base text-[#383F45] mb-6 max-w-xl mx-auto md:mx-0">
         Dr. GPD helps doctors analyze symptoms, lab reports, ultrasound and
         genetic data in seconds — then turns insights into action for
         patients, complete with streak-based motivation and smart rewards.
+      </p> */}
+       <p className="text-[16px] font-semibold text-[#383F45] mb-6 max-w-xl mx-auto md:mx-0">
+        AIGNOZ is at the frontier of precision medicine — integrating genomics, 
+artificial intelligence, and regenerative science to redefine diagnosis, 
+treatment, and human longevity. 
+      </p>
+      <p className="text-[16px] font-semibold text-[#383F45] mb-6 max-w-xl mx-auto md:mx-0">
+       We develop systems that make healthcare predictive, personalized, and 
+preventive. 
       </p>
 
       <button
@@ -377,6 +386,177 @@ const Home = () => {
     </div>
   </div>
 </div>
+
+{/* Core Innovations Section */}
+<section className="section py-20 ">
+  <div className="max-w-6xl mx-auto px-6 pt-10 text-center mb-12">
+    <h2 className="text-[36px] md:text-[42px] font-semibold text-[#24292E] mb-4">
+      Core Innovations
+    </h2>
+    <p className="text-[18px] text-[#383F45] max-w-3xl mx-auto">
+      AIGNOZ pioneers the frontier of AI-driven healthcare — integrating genomics, quantum computing, and regenerative medicine to design precision therapies for the future.
+    </p>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto px-6">
+    {/* Card 1 */}
+    <div
+      className="bg-white rounded-2xl shadow-md p-8 border-l-4 border-primary-500 text-left"
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+    >
+      <h3 className="text-[24px] font-semibold text-[#1A1D1F] mb-2">
+        Personalized Vaccines
+      </h3>
+      <p className="text-[18px] text-[#454C52] leading-relaxed">
+        Tailored immunization programs designed from genetic, epigenetic, and exposure data — targeting disease resistance and enhanced immune precision.
+      </p>
+    </div>
+
+    {/* Card 2 */}
+    <div
+      className="bg-white rounded-2xl shadow-md p-8 border-l-4 border-primary-500 text-left"
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+    >
+      <h3 className="text-[24px] font-semibold text-[#1A1D1F] mb-2">
+        Quantum Health Computing
+      </h3>
+      <p className="text-[18px] text-[#454C52] leading-relaxed">
+        Harnessing quantum algorithms for protein folding, molecular modeling, and predicting disease progression with unprecedented accuracy.
+      </p>
+    </div>
+
+    {/* Card 3 */}
+    <div
+      className="bg-white rounded-2xl shadow-md p-8 border-l-4 border-primary-500 text-left"
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+    >
+      <h3 className="text-[24px] font-semibold text-[#1A1D1F] mb-2">
+        Stem Cell & Regenerative Medicine
+      </h3>
+      <p className="text-[18px] text-[#454C52] leading-relaxed">
+        AI-assisted cellular reprogramming and organoid modeling for patient-specific therapy design.
+      </p>
+    </div>
+
+    {/* Card 4 */}
+    <div
+      className="bg-white rounded-2xl shadow-md p-8 border-l-4 border-primary-500 text-left"
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+    >
+      <h3 className="text-[24px] font-semibold text-[#1A1D1F] mb-2">
+        Clinical AI Ecosystem (Dr. GPD)
+      </h3>
+      <p className="text-[18px] text-[#454C52] leading-relaxed">
+        Unified diagnostic intelligence that connects genomics, radiology, and EHR data to deliver real-time, explainable predictions — the heart of the AIGNOZ clinical AI revolution.
+      </p>
+     <button
+  onClick={() => {
+    const section = document.getElementById('MrGPD');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }}
+  className="mt-4 bg-primary-500 text-white px-5 py-2 rounded-full hover:bg-primary-700 transition"
+>
+  Learn More
+</button>
+
+    </div>
+  </div>
+</section>
+
+
+{/* Applied AI in Healthcare Section */}
+<section className="section py-20 mt-10 bg-gradient-to-r from-[#FDF8FF] to-[#F7EDFF]">
+  <div className="max-w-6xl mx-auto py-10 px-6 text-center mb-14">
+    <h2 className="text-[36px] md:text-[42px] font-semibold text-[#1A1D1F] mb-4">
+      Applied AI in Healthcare
+    </h2>
+    <p className="text-[18px] text-[#383F45] max-w-3xl mx-auto">
+      Real-world applications where AIGNOZ bridges clinical expertise and intelligent automation — creating smarter, personalized, and more efficient healthcare.
+    </p>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto px-6">
+    {/* Card 1 */}
+    <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-10 border-t-4 border-primary-500">
+      <div className="mb-4 flex items-center gap-3">
+        <div className="bg-primary-100 text-primary-600 p-3 rounded-xl text-xl">🎙️</div>
+        <h3 className="text-[24px] font-semibold text-[#1A1D1F]">
+          AI Voice Agents for Clinical Efficiency
+        </h3>
+      </div>
+      <p className="text-[17px] text-[#454C52] leading-relaxed mb-4">
+        Virtual receptionists and medical scribes that manage booking, symptom intake, and consultation summaries — freeing doctors from repetitive documentation.
+      </p>
+      <ul className="list-disc ml-6 text-[16px] text-[#454C52] space-y-1 mb-4">
+        <li>Conversational symptom logging (speech-to-text + medical NLP)</li>
+        <li>Appointment scheduling & availability sync</li>
+        <li>Automated EHR note generation</li>
+        <li>Patient feedback & satisfaction insights</li>
+      </ul>
+      <p className="italic text-primary-700">
+        “Reducing documentation fatigue, restoring doctor–patient connection.”
+      </p>
+    </div>
+
+    {/* Card 2 */}
+    <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-10 border-t-4 border-primary-500">
+      <div className="mb-4 flex items-center gap-3">
+        <div className="bg-primary-100 text-primary-600 p-3 rounded-xl text-xl">🧬</div>
+        <h3 className="text-[24px] font-semibold text-[#1A1D1F]">
+          Genomics-Based Precision Risk Scoring
+        </h3>
+      </div>
+      <p className="text-[17px] text-[#454C52] leading-relaxed mb-4">
+        Predicting susceptibility and disease severity for viral infections (e.g., influenza, SARS-CoV, H3N2) using AI-powered genomic risk engines.
+      </p>
+      <ul className="list-disc ml-6 text-[16px] text-[#454C52] space-y-1 mb-4">
+        <li>Multi-omic data ingestion (RNA, proteomics, clinical)</li>
+        <li>Risk heatmaps & immune response predictions</li>
+        <li>AI-assisted vaccine personalization</li>
+        <li>Integration with outbreak dashboards</li>
+      </ul>
+      <p className="italic text-primary-700">
+        “From reactive testing to proactive immune readiness.”
+      </p>
+    </div>
+
+    {/* Card 3 */}
+    <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-10 border-t-4 border-primary-500 md:col-span-2">
+      <div className="mb-4 flex items-center gap-3">
+        <div className="bg-primary-100 text-primary-600 p-3 rounded-xl text-xl">💻</div>
+        <h3 className="text-[24px] font-semibold text-[#1A1D1F]">
+          Online Consultations & Precision Care Ecosystem
+        </h3>
+      </div>
+      <p className="text-[17px] text-[#454C52] leading-relaxed mb-4">
+        AIGNOZ Connect brings together expert clinicians and genomic intelligence — providing personalized second opinions, fertility insights, and health recommendations based on your unique biology.
+      </p>
+      <ul className="list-disc ml-6 text-[16px] text-[#454C52] space-y-1 mb-4">
+        <li>Infertility & IVF counseling</li>
+        <li>Women’s health & hormonal balance</li>
+        <li>Genomics-driven nutrition & risk prediction</li>
+        <li>Pharmacogenomics: right drug for the right genome</li>
+      </ul>
+      <p className="italic text-primary-700">
+        “When medicine meets your unique biology.”
+      </p>
+    </div>
+  </div>
+</section>
 
 
 
@@ -491,6 +671,7 @@ const Home = () => {
         </div>
       </section>
 
+
       {/* Who's it for?  */}
       <section className="section mt-10 px-4 md:px-12">
         <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Who's It For?</h2>
@@ -520,13 +701,13 @@ const Home = () => {
       </section>
 
       {/* Product Highlights  */}
-      <section className='section-about bg-gradient-to-r mt-10 from-transparent to-primary-50 flex flex-col-reverse md:flex-row items-center gap-8'>
+      <section id='MrGPD' className='section-about bg-gradient-to-r mt-10 from-transparent to-primary-50 flex flex-col-reverse md:flex-row items-center gap-8'>
 
         {/* Left Side - Text */}
         <div className="md:w-1/2">
 
           <h2 className="text-[40px]/20 font-[500] text-[#24292E] my-4">
-            <span className='font-[600]'>Product Highlights</span>
+            <span className='font-[600]'>Meet Dr. GPD</span>
           </h2>
           <p className="text-[#383F45] text-[16px] md:text-lg">
             What You Can Do with Dr. GPD

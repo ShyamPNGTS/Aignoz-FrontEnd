@@ -46,6 +46,7 @@ const Footer = () => {
                             <ul className="space-y-2 text-sm">
                                 <li onClick={scrollToTop()} className="hover:text-primary-600 text-[#24292E] cursor-pointer"><Link to={'/'}>Home</Link></li>
                                 <li onClick={scrollToTop()} className="hover:text-primary-600 text-[#24292E] cursor-pointer"><Link to={'/about'}>About Us</Link></li>
+                                 <li onClick={scrollToTop()} className="hover:text-primary-600 text-[#24292E] cursor-pointer"><Link to={'/program'}>Program</Link></li>
                                 <li onClick={scrollToTop()} className="hover:text-primary-600 text-[#24292E] cursor-pointer"><Link to={'/blogs'}>Blogs</Link></li>
                                 <li onClick={scrollToTop()} className="hover:text-primary-600 text-[#24292E] cursor-pointer"><Link to={'/appointment'}>Appointment</Link></li>
                                 <li onClick={scrollToTop()} className="hover:text-primary-600 text-[#24292E] cursor-pointer"><Link to={'/contact'}>Contact</Link></li>
