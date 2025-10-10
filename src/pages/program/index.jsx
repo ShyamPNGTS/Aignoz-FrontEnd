@@ -706,8 +706,8 @@ const Program = () => {
         </a>
       </p>
       <p>
-        <a href="tel:+91XXXXXXXXXX" className="hover:underline hover:text-primary-700">
-          +91-XXXXXXXXXX
+        <a href="tel:+919597557036" className="hover:underline hover:text-primary-700">
+          +91-9597557036
         </a>
       </p>
     </div>

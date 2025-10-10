@@ -61,11 +61,10 @@ const Contact = () => {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-6 py-2 cursor-pointer rounded-full border border-primary-500 font-medium capitalize ${
-                activeTab === tab
+              className={`px-6 py-2 cursor-pointer rounded-full border border-primary-500 font-medium capitalize ${activeTab === tab
                   ? "bg-primary-500 text-white"
                   : "border-gray-300 text-primary-500"
-              }`}
+                }`}
             >
               {tab}
             </button>
@@ -90,7 +89,10 @@ const Contact = () => {
               LOCATION
             </h3>
             <p className="text-[#404040] text-[16px] font-[400] ">
-              Aignoz HealthCare, 2nd Floor, Wellness Tower, Main Street, Indore
+              38, CHELLIAMMAN STREET,(SAI BABA TEMPLE)
+              ALAMELUMANGAPURAM,
+              VELLORE -632009
+
             </p>
           </div>
 
@@ -101,7 +103,7 @@ const Contact = () => {
               CALL US
             </h3>
             <p className="text-[#404040] text-[16px] font-[400]">
-              +91 98765 43210
+              +91 9597557036
             </p>
           </div>
 

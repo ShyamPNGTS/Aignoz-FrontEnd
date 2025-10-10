@@ -31,6 +31,14 @@ import doc2 from "../../assets/images/doc-2.jpg"
 import doc3 from "../../assets/images/doc-3.jpg"
 import doc4 from "../../assets/images/doc-4.jpg"
 import doc5 from "../../assets/images/doc-5.jpg"
+import newIcon1 from "../../assets/icons/icon1.jpg"
+import newIcon2 from "../../assets/icons/icon2.jpg"
+import newIcon3 from "../../assets/icons/icon3.jpg"
+import newIcon4 from "../../assets/icons/icon4.jpg"
+import newIcon5 from "../../assets/icons/icon5.jpg"
+import newIcon6 from "../../assets/icons/icon6.jpg"
+import newIcon7 from "../../assets/icons/icon7.jpg"
+
 import cardImg from "../../assets/images/about-experts-img.png"
 
 import { FaStar } from "react-icons/fa";
@@ -212,7 +220,7 @@ const Home = () => {
       },
       {
         id: 2,
-        name: "Dr. Aruna Verma",
+        name: "Dr. Shweta K V",
         specialization: "Dermatologist",
         description:
           "Dr. Verma provides advanced treatments for skin, hair, and nail disorders, including acne, eczema, and cosmetic dermatology.",
@@ -407,8 +415,8 @@ preventive.
       whileInView="show"
       viewport={{ once: true }}
     >
-      <h3 className="text-[24px] font-semibold text-[#1A1D1F] mb-2">
-        Personalized Vaccines
+      <h3 className="text-[24px] flex gap-2 items-center font-semibold text-[#1A1D1F] mb-2">
+        <img className='w-16' src={newIcon1} alt="" /> Personalized Vaccines
       </h3>
       <p className="text-[18px] text-[#454C52] leading-relaxed">
         Tailored immunization programs designed from genetic, epigenetic, and exposure data — targeting disease resistance and enhanced immune precision.
@@ -423,8 +431,8 @@ preventive.
       whileInView="show"
       viewport={{ once: true }}
     >
-      <h3 className="text-[24px] font-semibold text-[#1A1D1F] mb-2">
-        Quantum Health Computing
+      <h3 className="text-[24px] flex gap-2 items-center font-semibold text-[#1A1D1F] mb-2">
+        <img className='w-16' src={newIcon5} alt="" /> Quantum Health Computing
       </h3>
       <p className="text-[18px] text-[#454C52] leading-relaxed">
         Harnessing quantum algorithms for protein folding, molecular modeling, and predicting disease progression with unprecedented accuracy.
@@ -439,8 +447,8 @@ preventive.
       whileInView="show"
       viewport={{ once: true }}
     >
-      <h3 className="text-[24px] font-semibold text-[#1A1D1F] mb-2">
-        Stem Cell & Regenerative Medicine
+      <h3 className="text-[24px] flex gap-2 items-center font-semibold text-[#1A1D1F] mb-2">
+        <img className='w-16' src={newIcon6} alt="" /> Stem Cell & Regenerative Medicine
       </h3>
       <p className="text-[18px] text-[#454C52] leading-relaxed">
         AI-assisted cellular reprogramming and organoid modeling for patient-specific therapy design.
@@ -455,8 +463,8 @@ preventive.
       whileInView="show"
       viewport={{ once: true }}
     >
-      <h3 className="text-[24px] font-semibold text-[#1A1D1F] mb-2">
-        Clinical AI Ecosystem (Dr. GPD)
+      <h3 className="text-[24px] flex gap-2 items-center font-semibold text-[#1A1D1F] mb-2">
+        <img className='w-16' src={newIcon7} alt="" /> Clinical AI Ecosystem (Dr. GPD)
       </h3>
       <p className="text-[18px] text-[#454C52] leading-relaxed">
         Unified diagnostic intelligence that connects genomics, radiology, and EHR data to deliver real-time, explainable predictions — the heart of the AIGNOZ clinical AI revolution.
@@ -480,7 +488,7 @@ preventive.
 
 {/* Applied AI in Healthcare Section */}
 <section className="section py-20 mt-10 bg-gradient-to-r from-[#FDF8FF] to-[#F7EDFF]">
-  <div className="max-w-6xl mx-auto py-10 px-6 text-center mb-14">
+  <div className="max-w-7xl mx-auto py-10 px-6 text-center mb-14">
     <h2 className="text-[36px] md:text-[42px] font-semibold text-[#1A1D1F] mb-4">
       Applied AI in Healthcare
     </h2>
@@ -489,11 +497,11 @@ preventive.
     </p>
   </div>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto px-6">
+  <div className="flex flex-wrap justify-center gap-10 max-w-7xl mx-auto px-6">
     {/* Card 1 */}
-    <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-10 border-t-4 border-primary-500">
-      <div className="mb-4 flex items-center gap-3">
-        <div className="bg-primary-100 text-primary-600 p-3 rounded-xl text-xl">🎙️</div>
+  <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-10 border-t-4 border-primary-500 flex-1 min-w-[300px]">
+    <div className=" text-primary-600 rounded-xl w-full text-xl"><img className='w-24 mx-auto' src={newIcon2} alt="" /></div>
+      <div className="mb-4 flex  gap-3">
         <h3 className="text-[24px] font-semibold text-[#1A1D1F]">
           AI Voice Agents for Clinical Efficiency
         </h3>
@@ -513,9 +521,10 @@ preventive.
     </div>
 
     {/* Card 2 */}
-    <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-10 border-t-4 border-primary-500">
-      <div className="mb-4 flex items-center gap-3">
-        <div className="bg-primary-100 text-primary-600 p-3 rounded-xl text-xl">🧬</div>
+    <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-10 border-t-4 border-primary-500 flex-1 min-w-[300px]">
+       <div className=" text-primary-600 w-full  rounded-xl text-xl"><img className='w-20 mx-auto' src={newIcon3} alt="" /></div>
+      <div className="mb-4 flex gap-3">
+       
         <h3 className="text-[24px] font-semibold text-[#1A1D1F]">
           Genomics-Based Precision Risk Scoring
         </h3>
@@ -535,9 +544,10 @@ preventive.
     </div>
 
     {/* Card 3 */}
-    <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-10 border-t-4 border-primary-500 md:col-span-2">
-      <div className="mb-4 flex items-center gap-3">
-        <div className="bg-primary-100 text-primary-600 p-3 rounded-xl text-xl">💻</div>
+    <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-10 border-t-4 border-primary-500 flex-1 min-w-[300px]">
+      <div className=" text-primary-600 w-full  rounded-xl text-xl"><img className='w-16 mx-auto' src={newIcon4} alt="" /></div>
+      <div className="mb-4 flex gap-3">
+    
         <h3 className="text-[24px] font-semibold text-[#1A1D1F]">
           Online Consultations & Precision Care Ecosystem
         </h3>
@@ -557,6 +567,7 @@ preventive.
     </div>
   </div>
 </section>
+
 
 
 

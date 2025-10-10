@@ -32,7 +32,7 @@ const experts = [
   },
   {
     id: 2,
-    name: "Dr. Aruna Verma",
+    name: "Dr. Shweta K V",
     speciality: "Dermatologist",
     description:
       "Dr. Verma provides advanced treatments for skin, hair, and nail disorders, including acne, eczema, and cosmetic dermatology.",

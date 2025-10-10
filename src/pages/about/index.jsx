@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 // Import images here
-import img1 from "../../assets/images/about-section-1.png";
+import img1 from "../../assets/images/img1.jpg";
 import img2 from "../../assets/images/about-section-2.png";
 import img3 from "../../assets/images/about-section-3.png";
 import img4 from "../../assets/images/about-section-4.png";
@@ -107,8 +107,15 @@ const About = () => {
             At Aignoz, our mission is to make healthcare smarter, faster, and more accessible by combining the power of AI-driven symptom assessment with expert online doctor consultations.
           </p>
           <p className="text-[#383F45] mt-6 text-[16px] md:text-lg">
-            We believe every patient deserves timely care. That’s why your journey with Aignoz starts by interacting with our intelligent AI chatbot, which listens to your symptoms, asks relevant health questions, and instantly generates a detailed diagnostic report. This report is then shared with our certified doctors, enabling them to provide personalized and informed medical consultation—all from the comfort of your home.
-
+            Dr. Srinidhi, Shweta & Lalith Aravindan combine medical insight, computational
+            innovation, and strategic vision in AI to create a platform that redefines healthcare from
+            reactive treatment to proactive wellness.
+          </p>
+          <p className="text-[#383F45] mt-6 text-[16px] md:text-lg">
+            Under their leadership, AIGNOZ is developing next-generation solutions in Genomics,
+            personalized vaccines, quantum health computing, stem cell regeneration, and
+            AI-assisted clinical decision systems — shaping the future of intelligent, individualized
+            care.
           </p>
           {/* <div className='flex items-center mt-6 md:w-[100%] gap-4'>
             <p> <span className='font-semibold text-primary-500 '>Accessible Care: </span> Making healthcare easy to reach for every patient.</p>
@@ -129,58 +136,36 @@ const About = () => {
       </section>
 
       {/* 3rd Section  */}
-      <section className='section-about bg-gradient-to-l from-transparent to-primary-50 flex flex-col md:flex-row items-center gap-8'>
+     <section className='section-about bg-gradient-to-r from-transparent to-primary-50 flex flex-col-reverse md:flex-row items-center gap-8'>
 
         {/* Left Side - Text */}
         <div className="md:w-1/2">
 
-          <h2 className="text-[54px]/20 font-[500] text-[#24292E] my-4">
-            {/* <span className='font-[600] text-primary-500'>Our Vision</span> */}
-            <span className='font-[600] text-primary-500'>Together at AIGNOZ</span>
+          <h2 className="text-[64px]/20 font-[500] text-[#24292E] my-4">
+            <span className='font-[600] text-primary-500'> Research & Development</span>
           </h2>
-          {/* <p className="text-[#383F45] text-[16px] md:text-lg">
-            We envision a future where smart technology and compassionate care work hand in hand to transform how people access healthcare.
-          </p> */}
           <p className="text-[#383F45] text-[16px] md:text-lg">
-            Dr. Srinidhi, Shweta & Lalith Aravindan combine medical insight, computational
-            innovation, and strategic vision in AI to create a platform that redefines healthcare from
-            reactive treatment to proactive wellness.
+           We provide expertise for brain storming in  Research & Development
           </p>
-
-          {/* <p className="text-[#383F45] mt-6 text-[16px] md:text-lg">
-            At Aignoz, our vision is to become a trusted leader in AI-assisted online medical consultations, offering every patient a seamless and informed healthcare experience—from their first interaction with our AI chatbot to their consultation with a certified doctor.
-          </p> */}
-          <p className="text-[#383F45] mt-6 text-[16px] md:text-lg">
-            Under their leadership, AIGNOZ is developing next-generation solutions in Genomics,
-            personalized vaccines, quantum health computing, stem cell regeneration, and
-            AI-assisted clinical decision systems — shaping the future of intelligent, individualized
-            care.
-          </p>
-
-
-          {/* <div className='flex items-center mt-6 md:w-[100%] gap-2'>
-          <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
-            <p>Committed to accessible and personalized medical care</p>
+          <div className='flex items-center mt-6 md:w-[100%] gap-2'>
+            <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
+            <p> AI-augmented diagnostic intelligence systems(Dr.GPD) </p>
           </div>
           <div className='flex items-center mt-6 md:w-[100%] gap-2'>
-          <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
-            <p>Led by expert doctors with years of experience</p>
+            <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
+            <p>Genomics-driven disease risk modeling </p>
           </div>
           <div className='flex items-center mt-6 md:w-[100%] gap-2'>
-          <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
-            <p>Trusted by a growing community of satisfied patients</p>
+            <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
+            <p>Synthetic data generation for rare disease research </p>
           </div>
           <div className='flex items-center mt-6 md:w-[100%] gap-2'>
-          <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
-            <p>Reach more patients and grow your practice.</p>
+            <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
+            <p>Quantum-biological simulations for drug and vaccine discovery</p>
           </div>
-          <div className='flex items-center mt-6 md:w-[100%] gap-2'>
-          <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
-            <p>Making healthcare easy to reach for every patient.</p>
-          </div> */}
         </div>
 
-        {/* Right Side - Image */}
+         {/* Right Side - Image */}
         <div className="md:w-1/2">
           <img
             src={img3}
@@ -188,6 +173,7 @@ const About = () => {
             className="w-[550px] rounded-md"
           />
         </div>
+
       </section>
 
       {/* 4th Section  */}
@@ -237,46 +223,6 @@ const About = () => {
 
       </section>
 
-       <section className='section-about bg-gradient-to-r from-transparent to-primary-50 flex flex-col-reverse md:flex-row items-center gap-8'>
-
-        {/* Left Side - Text */}
-        <div className="md:w-1/2">
-
-          <h2 className="text-[64px]/20 font-[500] text-[#24292E] my-4">
-            <span className='font-[600] text-primary-500'> Research & Development</span>
-          </h2>
-          <p className="text-[#383F45] text-[16px] md:text-lg">
-           We provide expertise for brain storming in  Research & Development
-          </p>
-          <div className='flex items-center mt-6 md:w-[100%] gap-2'>
-            <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
-            <p> AI-augmented diagnostic intelligence systems(Dr.GPD) </p>
-          </div>
-          <div className='flex items-center mt-6 md:w-[100%] gap-2'>
-            <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
-            <p>Genomics-driven disease risk modeling </p>
-          </div>
-          <div className='flex items-center mt-6 md:w-[100%] gap-2'>
-            <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
-            <p>Synthetic data generation for rare disease research </p>
-          </div>
-          <div className='flex items-center mt-6 md:w-[100%] gap-2'>
-            <HiOutlineCheckCircle className="text-primary-500 font-semibold text-2xl" />
-            <p>Quantum-biological simulations for drug and vaccine discovery</p>
-          </div>
-        </div>
-
-         {/* Right Side - Image */}
-        <div className="md:w-1/2">
-          <img
-            src={img4}
-            alt="Descriptive Alt"
-            className="w-[550px] rounded-md"
-          />
-        </div>
-
-      </section>
-
       {/* Founders & Leadership Section */}
       <section className="section-about bg-gradient-to-r from-transparent to-primary-50 py-16">
 
@@ -320,7 +266,7 @@ const About = () => {
         </div>
 
         {/* Shweta K.V */}
-        <div className="flex flex-col-reverse md:flex-row items-center gap-10 mb-20">
+        <div className="flex flex-col-reverse md:flex-row items-center mb-20">
           <div className="md:w-1/2">
             <h2 className="text-[36px] font-semibold text-[#24292E] mb-2">
               Shweta K.V — <span className="text-primary-500">Co-Founder & COO</span>
@@ -339,7 +285,7 @@ const About = () => {
             <img
               src={doc2}
               alt="Shweta K.V"
-              className="w-[400px] rounded-xl shadow-lg"
+              className="w-[400px] ml-auto rounded-xl shadow-lg"
             />
           </div>
         </div>
