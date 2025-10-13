@@ -212,57 +212,57 @@ const Home = () => {
     {
         id: 1,
         name: "Dr. Srinidhi B V",
-        specialization: "Cardiologist",
+        specialization: "General Physician",
         description:
-          "Dr. Sharma specializes in heart health, with expertise in managing hypertension, arrhythmias, and preventive cardiac care.",
+          "AI & Healthcare lead, general physician with 10 years experience",
         image: doc1,
         rating : 4.5
       },
-      {
-        id: 2,
-        name: "Dr. Shweta K V",
-        specialization: "Dermatologist",
-        description:
-          "Dr. Verma provides advanced treatments for skin, hair, and nail disorders, including acne, eczema, and cosmetic dermatology.",
-        image: doc2,
-        rating : 4.2
-      },
-      {
-        id: 3,
-        name: "Dr. Kavit Menon",
-        specialization: "Pediatrician",
-        description:
-          "With over 12 years of experience, Dr. Menon is dedicated to children’s health, covering growth, vaccinations, and nutrition.",
-        image: cardImg,
-        rating : 4.0
-      },
-      {
-        id: 4,
-        name: "Dr. Rakesh Gupta",
-        specialization: "Orthopedic Surgeon",
-        description:
-          "Dr. Gupta is an expert in treating bone, joint, and spine conditions, specializing in sports injuries and joint replacements.",
-        image: doc3,
-        rating : 3.8
-      },
-      {
-        id: 5,
-        name: "Dr. Neha Kapoor",
-        specialization: "Gynecologist",
-        description:
-          "Dr. Kapoor focuses on women’s health, offering care in pregnancy, fertility, menstrual health, and preventive screenings.",
-        image: doc4,
-        rating : 4.3
-      },
-      {
-        id: 6,
-        name: "Dr. Sanjay Rao",
-        specialization: "Neurologist",
-        description:
-          "Dr. Rao is experienced in diagnosing and managing neurological disorders such as epilepsy, stroke, migraines, and dementia.",
-        image: doc5,
-        rating : 4.9
-      },
+      // {
+      //   id: 2,
+      //   name: "Dr. Shweta K V",
+      //   specialization: "Dermatologist",
+      //   description:
+      //     "Dr. Verma provides advanced treatments for skin, hair, and nail disorders, including acne, eczema, and cosmetic dermatology.",
+      //   image: doc2,
+      //   rating : 4.2
+      // },
+      // {
+      //   id: 3,
+      //   name: "Dr. Kavit Menon",
+      //   specialization: "Pediatrician",
+      //   description:
+      //     "With over 12 years of experience, Dr. Menon is dedicated to children’s health, covering growth, vaccinations, and nutrition.",
+      //   image: cardImg,
+      //   rating : 4.0
+      // },
+      // {
+      //   id: 4,
+      //   name: "Dr. Rakesh Gupta",
+      //   specialization: "Orthopedic Surgeon",
+      //   description:
+      //     "Dr. Gupta is an expert in treating bone, joint, and spine conditions, specializing in sports injuries and joint replacements.",
+      //   image: doc3,
+      //   rating : 3.8
+      // },
+      // {
+      //   id: 5,
+      //   name: "Dr. Neha Kapoor",
+      //   specialization: "Gynecologist",
+      //   description:
+      //     "Dr. Kapoor focuses on women’s health, offering care in pregnancy, fertility, menstrual health, and preventive screenings.",
+      //   image: doc4,
+      //   rating : 4.3
+      // },
+      // {
+      //   id: 6,
+      //   name: "Dr. Sanjay Rao",
+      //   specialization: "Neurologist",
+      //   description:
+      //     "Dr. Rao is experienced in diagnosing and managing neurological disorders such as epilepsy, stroke, migraines, and dementia.",
+      //   image: doc5,
+      //   rating : 4.9
+      // },
   ];
 
   const [startIndex, setStartIndex] = useState(0);
@@ -860,54 +860,64 @@ preventive.
           <p className='text-[18px] mt-2 text-[#383F45] '>Our dedicated team of specialists is committed to your well-being.</p>
         </div>
 
-        <div className="relative mt-8 flex items-center">
-          {/* Left Arrow */}
-          <button
-            onClick={handlePrev}
-            disabled={startIndex === 0}
-            className="disabled:opacity-30 cursor-pointer bg-white shadow p-1 md:p-2 rounded-full mr-0 md:mr-4"
-          >
-            <HiArrowNarrowLeft className="text-lg md:text-2xl text-primary-500" />
-          </button>
+       <div
+  className={`mt-8 flex items-center ${
+    doctors.length === 1 ? "justify-center" : "justify-between"
+  } w-full`}
+>
+  {/* Left Arrow */}
+  <button
+    onClick={handlePrev}
+    disabled={startIndex === 0}
+    className="disabled:opacity-30 cursor-pointer bg-white shadow p-1 md:p-2 rounded-full mr-0 md:mr-4"
+  >
+    <HiArrowNarrowLeft className="text-lg md:text-2xl text-primary-500" />
+  </button>
 
-          {/* Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-1">
-            {doctors.slice(startIndex, startIndex + visibleCards).map((doc) => (
-              <div
-                key={doc.id}
-                className="bg-white p-4 rounded-md shadow-lg drop-shadow-[0_4px_8px_rgba(221, 124, 254, 0.4)]"
-              >
-                <img
-                  src={doc.image}
-                  alt={doc.name}
-                  className="mx-auto h-80 rounded-md mb-4"
-                />
-                <div className='flex justify-between'>
-                  <h3 className="text-[18px] font-[500] text-[#24292E]">{doc.name}</h3>
-                  <div className="flex bg-[#FFCC001F] rounded-full px-2 py-1 items-center gap-1">
-                    <FaStar className="text-yellow-400 text-sm" />
-                    <span className="text-sm text-gray-700">{doc.rating}</span>
-                  </div>
-                </div>
-                <p className="text-sm text-primary-600 font-medium mb-2">
-                  {doc.specialization}
-                </p>
-                <hr className='text-[#E5E7EA] p-1 my-3' />
-                <p className="text-[14px] text-[#454C52]">{doc.description}</p>
-              </div>
-            ))}
+  {/* Cards */}
+  <div
+    className={`grid gap-6 flex-1 ${
+      doctors.length === 1
+        ? "grid-cols-1 justify-items-center"
+        : "grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3"
+    }`}
+  >
+    {doctors.slice(startIndex, startIndex + visibleCards).map((doc) => (
+      <div
+        key={doc.id}
+        className="bg-white p-4 rounded-xl shadow-lg drop-shadow-[0_4px_8px_rgba(221,124,254,0.4)]"
+      >
+        <img
+          src={doc.image}
+          alt={doc.name}
+          className="mx-auto h-80 rounded-md mb-4"
+        />
+        <div className="flex justify-between">
+          <h3 className="text-[18px] font-[500] text-[#24292E]">{doc.name}</h3>
+          <div className="flex bg-[#FFCC001F] rounded-full px-2 py-1 items-center gap-1">
+            <FaStar className="text-yellow-400 text-sm" />
+            <span className="text-sm text-gray-700">{doc.rating}</span>
           </div>
-
-
-          {/* Right Arrow */}
-          <button
-            onClick={handleNext}
-            disabled={startIndex + visibleCards >= doctors.length}
-            className="disabled:opacity-30 cursor-pointer bg-white shadow p-1 md:p-2 rounded-full ml-0 md:ml-4"
-          >
-            <HiArrowNarrowRight className="text-lg md:text-2xl text-primary-500" />
-          </button>
         </div>
+        <p className="text-sm text-primary-600 font-medium mb-2">
+          {doc.specialization}
+        </p>
+        <hr className="text-[#E5E7EA] p-1 my-3" />
+        <p className="text-[14px] text-[#454C52]">{doc.description}</p>
+      </div>
+    ))}
+  </div>
+
+  {/* Right Arrow */}
+  <button
+    onClick={handleNext}
+    disabled={startIndex + visibleCards >= doctors.length}
+    className="disabled:opacity-30 cursor-pointer bg-white shadow p-1 md:p-2 rounded-full ml-0 md:ml-4"
+  >
+    <HiArrowNarrowRight className="text-lg md:text-2xl text-primary-500" />
+  </button>
+</div>
+
       </section>
 
       <section className="section mt-16 px-4 md:px-12">
