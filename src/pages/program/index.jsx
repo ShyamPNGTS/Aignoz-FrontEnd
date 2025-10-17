@@ -8,6 +8,8 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import patientTrust from '../../assets/images/home-patient-trust.png'
 import img3 from "../../assets/images/about-section-3.png";
 import doc1 from "../../assets/images/doc-1.jpg"
+import founder2 from "../../assets/images/doc-2.jpg"
+import founder3 from "../../assets/images/doc-3.jpg"
 
 const faqs = [
   {
@@ -312,7 +314,7 @@ const Program = () => {
 
 
 {/* Mentors & Faculty Section */}
-<section className="py-20 bg-white">
+{/* <section className="py-20 bg-white">
   <div className="max-w-7xl mx-auto px-6 text-center">
     <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-12">
       Mentors & Faculty
@@ -323,7 +325,7 @@ const Program = () => {
     </p>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-      {/* Example Mentor Cards */}
+     
       <div className="bg-[#F9F9F9] p-6 rounded-xl shadow-md">
         <img
           src="/images/mentor1.jpg"
@@ -371,7 +373,7 @@ const Program = () => {
       </div>
     </div>
   </div>
-</section>
+</section> */}
 
 {/* Founders & Leadership Section */}
 <section className="py-20 bg-[#F9F9F9]">
@@ -382,41 +384,40 @@ const Program = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
       <div className="bg-white p-6 rounded-xl shadow-md">
         <img
-          src="/images/founder1.jpg"
+          src={doc1}
           alt="Founder"
           className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
         />
-        <h3 className="text-xl font-semibold text-gray-800">Dr. A</h3>
+        <h3 className="text-xl font-semibold text-gray-800">Dr. Srinidhi B.V</h3>
         <p className="text-primary-500 text-sm mb-2">Founder & CEO</p>
         <p className="text-sm text-[#383F45]">
-          Clinician-researcher with 10+ years in healthcare AI innovation and ethics.
+          Dr. Srinidhi B.V is a visionary medical innovator passionate about merging artificial intelligence, molecular biology, and genomic science to redefine the future of healthcare.
         </p>
       </div>
 
       <div className="bg-white p-6 rounded-xl shadow-md">
         <img
-          src="/images/founder2.jpg"
+          src={founder2}
           alt="CTO"
           className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
         />
-        <h3 className="text-xl font-semibold text-gray-800">Mr. B</h3>
-        <p className="text-primary-500 text-sm mb-2">CTO</p>
+        <h3 className="text-xl font-semibold text-gray-800">Shweta K.V</h3>
+        <p className="text-primary-500 text-sm mb-2">Co-Founder & COO</p>
         <p className="text-sm text-[#383F45]">
-          AI/ML specialist with hands-on experience in deploying clinical-grade models.
+          Shweta K.V is a strategic healthcare innovator who bridges biomedical science, operations, and AI transformation.
         </p>
       </div>
 
       <div className="bg-white p-6 rounded-xl shadow-md">
         <img
-          src="/images/founder3.jpg"
+          src={founder3}
           alt="Program Director"
           className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
         />
-        <h3 className="text-xl font-semibold text-gray-800">Ms. C</h3>
-        <p className="text-primary-500 text-sm mb-2">Program Director</p>
+        <h3 className="text-xl font-semibold text-gray-800">Lalith Aravindan</h3>
+        <p className="text-primary-500 text-sm mb-2">Chief Technology Officer (CTO)</p>
         <p className="text-sm text-[#383F45]">
-          Passionate about building bridges between medicine and technology through
-          experiential education.
+         Lalith Aravindan is a forward-thinking technologist and data scientist specializing in machine learning, deep learning, and full-stack AI development.
         </p>
       </div>
     </div>
