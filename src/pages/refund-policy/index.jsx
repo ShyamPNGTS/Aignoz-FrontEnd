@@ -46,7 +46,7 @@ const RefundPolicy = () => {
 
                 <p className='text-[16px] mt-5 text-[#383F45] font-[400] '>Refunds will be processed within 5-7 business days to the original payment method. Users must contact support with transaction details to initiate the process.</p>
 
-                 <p className='text-[16px] mt-5 text-[#383F45] font-[400] '>For further queries, contact our support team at support@yourdomain.com.</p>
+                 <p className='text-[16px] mt-5 text-[#383F45] font-[400] '>For further queries, contact our support team at aignozai@gmail.com.</p>
 
 
             </section>

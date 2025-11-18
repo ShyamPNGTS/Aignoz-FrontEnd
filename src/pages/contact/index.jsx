@@ -112,7 +112,7 @@ const Contact = () => {
             <img src={email} alt="" className="w-20" />
             <h3 className="text-[20px] font-[500] text-gray-800 mb-2">EMAIL</h3>
             <p className="text-[#404040] text-[16px] font-[400]">
-              support@aignoz.com
+              aignozai@gmail.com
             </p>
           </div>
         </div>

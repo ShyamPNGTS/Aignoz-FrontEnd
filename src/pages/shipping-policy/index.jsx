@@ -41,7 +41,7 @@ const ShippingPolicy = () => {
 
                 <p className='text-[16px] mt-5 text-[#383F45] font-[400] '>In case of a failed consultation due to technical issues, users may reschedule or request a refund based on eligibility under our refund policy.</p>
 
-                 <p className='text-[16px] mt-5 text-[#383F45] font-[400] '>For further queries, contact our support team at support@aignoz.com.</p>
+                 <p className='text-[16px] mt-5 text-[#383F45] font-[400] '>For further queries, contact our support team at aignozai@gmail.com.</p>
 
 
             </section>
